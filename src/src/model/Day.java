@@ -1,16 +1,17 @@
 package model;
 import java.io.Serializable;
+import java.util.Date;
 
-public class Date implements Serializable {
+public class Day implements Serializable {
 	  private int date_id;
 	  private Date date;
-	public Date(int date_id, Date date) {
+	public Day(int date_id, Date date) {
 		super();
 		this.date_id = date_id;
 		this.date = date;
 	}
 
-	public Date() {
+	public Day() {
 		super();
 		this.date_id = 0;
 		this.date = new Date();

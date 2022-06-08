@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Date;
+import model.Day;
 
-public class DateDAO {
+public class DayDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public Date select(Date param) {
+	public Day select(Day param) {
 		Connection conn = null;
-		Date date = new Date();
+		Day day = new Day();
 
 		try {
 			// JDBCドライバを読み込む

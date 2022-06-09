@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/result.css">
 <script src="/nakao/javascript/common.js"></script>
-<script src="/nakao/javascript/result.js"></script>
 </head>
 <body>
 

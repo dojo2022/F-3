@@ -22,6 +22,9 @@ public class DayDao {
 
 			// SQL文を準備する
 			String sql = "select datetime from date ORDER BY date_id desc limit 1";
+<<<<<<< HEAD:src/src/dao/DateDao.java
+		kakkorooo
+=======
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する
@@ -51,6 +54,7 @@ public class DayDao {
 				}
 			}
 		}
+>>>>>>> bcff63b24d30475bfa5228afc3923f905f3f53d2:src/src/dao/DayDao.java
 
 		// 結果を返す
 		return day;

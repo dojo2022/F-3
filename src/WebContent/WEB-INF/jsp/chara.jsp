@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>キャラ変更画面</title>
+<link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
+<link rel="stylesheet" type="text/css" href="/nakao/css/chara.css">
 </head>
 <body>
 <!-- 選択中のキャラ -->
@@ -30,6 +32,7 @@
 	<div class = "change">
 		<button >変更</button>
 	</div>
+
 
 	<h1>キャラ一覧</h1>
 	<div class = "subbox">

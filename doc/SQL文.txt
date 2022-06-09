@@ -1,0 +1,38 @@
+【ドライバ】
+org.h2.Driver
+
+【JDBC URL】
+jdbc:h2:file:C:/dojo_data/F3
+
+【ユーザー名】	【パスワード】
+sa		（なし）
+
+<CREATE文>
+CREATE TABLE USER (
+user_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+user_pass VARCHAR(20) NOT NULL,
+point int,
+char_id int
+);
+
+CREATE TABLE DATE (
+date_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+datetime date
+);
+
+CREATE TABLE MISSION (
+mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+sentence VARCHAR(30)
+);
+
+CREATE TABLE CHARACTER (
+char_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+name VARCHAR(20),
+Ex_point int,
+file_pass VARCHAR(50)
+);
+
+
+<INSERT文>
+INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);
+INSERT INTO DATE (datetime) VALUES ('2022-06-09');

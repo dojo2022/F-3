@@ -167,11 +167,10 @@ public class UserDao {
 
 
 	}
-	public int updateUserInfo(User user) {
-		List<User> point = new ArrayList<User>();
+	public boolean updateUserInfo(User user) { //userの情報を変更する Tポイントとchar_idが変えられます
 
 		Connection conn = null;
-		int nana = 0;
+		boolean nana = false;
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -186,31 +185,24 @@ public class UserDao {
 				pStmt.setInt(1, user.getPoint());
 			}
 			else {
-				pStmt.setInt(1, 0);
+				pStmt.setString(1, null);
 			}
 			if (user.getChar_id() != 0) {
 				pStmt.setInt(2, user.getChar_id());
 			}
 			else {
-				pStmt.setString(2, null);
+				pStmt.setString(2,null);
 			}
 
-			// SELECT文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-
-			while (rs.next()) {
-				int a= rs.getInt("point");
-				point.add(a);
+			if (pStmt.executeUpdate() == 1) {
+				nana = true;
 			}
-		nana = point.get(0);
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			nana = 0;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			nana = 0;
 		}
 		finally {
 			// データベースを切断
@@ -220,7 +212,6 @@ public class UserDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-				 nana = 0;
 				}
 			}
 		}

@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/nakao/css/login.css">
 </head>
 <body>
- <form method="POST" action="/simpleBC/LoginServlet">
+ <form method="POST" action="/nakao/LoginServlet">
 <!--   <div class="fuchidori">なかおっち</div> -->
 <h1 id="logo">
   <img src="/nakao/img/poyopoyokinoko.gif" width="1367" height="130" alt="なかおっち">

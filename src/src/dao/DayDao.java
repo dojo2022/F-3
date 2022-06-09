@@ -4,8 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 import model.Day;
 
 public class DayDao {
@@ -19,16 +18,41 @@ public class DayDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6", "sa", "");
+
 			// SQL文を準備する
 			String sql = "select datetime from date ORDER BY date_id desc limit 1";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
-			rs.next();
 
+			//
+			rs.next();
+			day.setDate(rs.getDate("DATETIME"));
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			day = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			day = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					day = null;
+				}
+			}
 		}
 
+		// 結果を返す
+		return day;
 	}
-
 }

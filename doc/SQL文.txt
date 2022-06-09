@@ -1,0 +1,1 @@
+create table date(date_id int, datetime date)

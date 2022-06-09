@@ -7,6 +7,8 @@
 <title>キャラ変更画面</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/chara.css">
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/chara.js"></script>
 </head>
 <body>
 <!-- 選択中のキャラ -->

@@ -6,6 +6,8 @@
 <title>なかおっち</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/login.css">
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/login.js"></script>
 </head>
 <body>
  <form method="POST" action="/nakao/LoginServlet">

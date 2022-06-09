@@ -2,8 +2,10 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CharaDao;
+import dao.DayDao;
 import dao.MissionDao;
 import dao.UserDao;
 import model.Chara;
+import model.Day;
 import model.Mission;
 
 /**
@@ -50,12 +54,27 @@ public class MainServlet extends HttpServlet {
 		MissionDao mDao=new MissionDao();
 		CharaDao cDao=new CharaDao();
 		UserDao uDao=new UserDao();
+		DayDao ddao=new DayDao();
+//ここからTポイント処理
+		Day day1=ddao.select(new Day()); //古いデータ
+		Day day2=new Day(); //新しいデータ
 
+		day2.setDate(new Date());
+
+		if(day1.getDate().equals(day2.getDate())){ //ここ今は500エラー
+
+
+		}else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
+		}
+//ここからミッション処理
 		List<Mission> missionList =new ArrayList<Mission>();
 		missionList=mDao.select(new Mission()); //ミッション三つ これを渡す
-
+//ここからキャラクター関係の処理
 		int charId=uDao.char_id();
 		Chara growing=cDao.inf(charId);//育成中のキャラクター
+
 	}
 
 }

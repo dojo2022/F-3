@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 		DayDao ddao=new DayDao();
 		Day day1=ddao.select(new Day()); //古いデータ
 		Day day2=new Day(); //新しいデータ
-
+System.out.println(day1+","+day2);
 		day2.setDate(new Date());
 
 		if(day1.getDate().equals(day2.getDate())){

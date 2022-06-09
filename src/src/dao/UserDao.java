@@ -167,6 +167,68 @@ public class UserDao {
 
 
 	}
+	public int updateUserInfo(User user) {
+		List<User> point = new ArrayList<User>();
+
+		Connection conn = null;
+		int nana = 0;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// SELECT文を準備する
+			String sql = "update user set tpoint=?,char_id=? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			if (user.getPoint() != 0) {
+				pStmt.setInt(1, user.getPoint());
+			}
+			else {
+				pStmt.setInt(1, 0);
+			}
+			if (user.getChar_id() != 0) {
+				pStmt.setInt(2, user.getChar_id());
+			}
+			else {
+				pStmt.setString(2, null);
+			}
+
+			// SELECT文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			while (rs.next()) {
+				int a= rs.getInt("point");
+				point.add(a);
+			}
+		nana = point.get(0);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			nana = 0;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			nana = 0;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				 nana = 0;
+				}
+			}
+		}
+
+		// 結果を返す
+		return nana;
+
+	}
 
 }
 

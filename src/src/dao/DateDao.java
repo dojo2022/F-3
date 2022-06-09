@@ -22,12 +22,7 @@ public class DateDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
 			// SQL文を準備する
 			String sql = "select datetime from date ORDER BY date_id desc limit 1";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-			// SQL文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-			rs.next();
-
-		}
+		kakkorooo
 
 	}
 

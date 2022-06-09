@@ -7,6 +7,8 @@
 <title>卵購入</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/buy.css">
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/buy.js"></script>
 </head>
 <body>
 <button id="gachabtn">

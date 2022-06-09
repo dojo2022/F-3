@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/main.css">
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/main.js"></script>
 </head>
 <body>
 

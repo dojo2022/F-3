@@ -19,7 +19,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection(/*保留*/);
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from user where user_id = ? and user_pass = ?";
@@ -74,7 +74,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection(/*保留*/);
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select point from user";
@@ -126,7 +126,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection(/*保留*/);
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select char_id from user";

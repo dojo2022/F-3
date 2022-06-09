@@ -9,16 +9,16 @@ import model.Day;
 
 public class DayDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public Day select(Day param) {
+	public Day select(Day day) {
 		Connection conn = null;
-		Day day = new Day();
+		//day = new Day();
 
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SQL文を準備する
 			String sql = "select datetime from date ORDER BY date_id desc limit 1";

@@ -11,7 +11,7 @@ import model.Chara;
 
 public class CharaDao {
 
-	public Chara inf(int id) {
+	public Chara inf(int id) {//現在育成中のキャラクターを取得
 		List<Chara> inf = new ArrayList<Chara>();
 
 		Connection conn = null;
@@ -21,7 +21,7 @@ public class CharaDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection(/*保留*/);
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select * from character where char_id = ? ";
@@ -72,7 +72,7 @@ public class CharaDao {
 
 	}
 
-	public List<Chara> allchara(){
+	public List<Chara> allchara(){//全てのキャラクターを取得
 
 		List<Chara> inf = new ArrayList<Chara>();
 
@@ -82,7 +82,7 @@ public class CharaDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection(/*保留*/);
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select * from character";

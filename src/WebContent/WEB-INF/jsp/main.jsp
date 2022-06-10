@@ -13,23 +13,20 @@
 <body>
 
 <div class="mission_c">
-<button id="btn1">
   <div>
- データベースのミッション1が表示<img src="/nakao/img/.jpg" width="" height="">
+ 		<p>データベースのミッション1が表示</p>
+        <input type="button" value="&#x2714;" onclick="check1()" id="btn1">
   </div>
-</button>
 
- <button id="btn2">
   <div>
- データベースのミッション2が表示<img src="/nakao/img/.jpg" width="" height="">
+ 		<p>データベースのミッション2が表示</p>
+        <input type="button" value="&#x2714;" onclick="check2()" id="btn2">
   </div>
-</button>
 
-  <button id="btn3">
   <div>
-   データベースのミッション3が表示<img src="/nakao/img/.jpg" width="" height="">
+ 		<p>データベースのミッション3が表示</p>
+        <input type="button" value="&#x2714;" onclick="check3()" id="btn3">
   </div>
-</button>
 </div>
 
 <!-- 真ん中の画面 -->

@@ -167,10 +167,14 @@ public class UserDao {
 
 
 	}
-	public boolean updateUserInfo(User user) { //userの情報を変更する Tポイントとchar_idが変えられます
+	public int updateTpoint(int num) { //tポイント変更
+
+		//引数の数だけポイントを増減します
+		//返り値は現在のポイント
+		//ポイントを減らしたい時はマイナス値を設定する
 
 		Connection conn = null;
-		boolean nana = false;
+		int nana = 0;
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -179,23 +183,13 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "update user set tpoint=?,char_id=? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
+			String sql = "update user set tpoint=tpoint+? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			if (user.getPoint() != 0) {
-				pStmt.setInt(1, user.getPoint());
-			}
-			else {
-				pStmt.setString(1, null);
-			}
-			if (user.getChar_id() != 0) {
-				pStmt.setInt(2, user.getChar_id());
-			}
-			else {
-				pStmt.setString(2,null);
-			}
+
+			pStmt.setInt(1, num);
 
 			if (pStmt.executeUpdate() == 1) {
-				nana = true;
+				 nana=tpoint();
 			}
 		}
 		catch (SQLException e) {
@@ -220,6 +214,48 @@ public class UserDao {
 		return nana;
 
 	}
+	public boolean updateChara(int num) { //キャラクター変更 更新できたかどうかを返す
 
+		Connection conn = null;
+		boolean nana = false;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// SELECT文を準備する
+			String sql = "update user set char_id=? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setInt(1, num);
+
+			if (pStmt.executeUpdate() == 1) {
+				 nana=true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return nana;
+
+	}
 }
 

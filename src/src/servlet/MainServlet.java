@@ -51,20 +51,24 @@ public class MainServlet extends HttpServlet {
 			return;
 		}
 
+		final int loginPoint=3; //ログボでもらえるポイント
+
 		MissionDao mDao=new MissionDao();
 		CharaDao cDao=new CharaDao();
 		UserDao uDao=new UserDao();
 		DayDao ddao=new DayDao();
+
 //ここからTポイント処理
 		Day day1=ddao.select(new Day()); //古いデータ
 		Day day2=new Day(); //新しいデータ
 
 		day2.setDate(new Date());
 
-		if(day1.getDate().equals(day2.getDate())){ //ここ今は500エラー
+		if(!(day1.getDate().equals(day2.getDate()))){ //日付が違ったら
+			int nowPoint=uDao.updateTpoint(loginPoint);
+			System.out.println("Tpoint="+nowPoint); //デバッグ用 変更後のTポイント
 
-
-		}else{
+		}else{//同じなら
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}

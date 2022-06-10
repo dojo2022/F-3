@@ -38,6 +38,9 @@ public class MainServlet extends HttpServlet {
 				response.sendRedirect("/nakao/LoginServlet");
 				return;
 			}
+			// メインページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			dispatcher.forward(request, response);
 	}
 
 	/**
@@ -67,17 +70,17 @@ public class MainServlet extends HttpServlet {
 		if(!(day1.getDate().equals(day2.getDate()))){ //日付が違ったら
 			int nowPoint=uDao.updateTpoint(loginPoint);
 			System.out.println("Tpoint="+nowPoint); //デバッグ用 変更後のTポイント
-
-		}else{//同じなら
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-			dispatcher.forward(request, response);
 		}
+
 //ここからミッション処理
 		List<Mission> missionList =new ArrayList<Mission>();
 		missionList=mDao.select(new Mission()); //ミッション三つ これを渡す
+
 //ここからキャラクター関係の処理
 		int charId=uDao.char_id();
 		Chara growing=cDao.inf(charId);//育成中のキャラクター
+
+//この辺でデータをスコープに入れる
 //フォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);

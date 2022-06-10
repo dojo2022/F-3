@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,6 +48,8 @@ public class ResultServlet extends HttpServlet {
 		int charId=uDao.char_id();
 		Chara growing=cDao.inf(charId);
 		exp=growing.getEx_point();//経験値
-
+//フォワード
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 	}
 }

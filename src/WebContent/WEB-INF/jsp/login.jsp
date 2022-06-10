@@ -15,8 +15,8 @@
 <h1 id="logo">
   <img src="/nakao/img/poyopoyokinoko.gif" width="1367" height="130" alt="なかおっち">
   </h1>
-  <input type="text" name="ID" placeholder="Username"/>
-  <input type="password" name="PW" placeholder="Password"/>
+  <input type="text" name="user_id" placeholder="Username"/>
+  <input type="password" name="user_pass" placeholder="Password"/>
   <button>
   <div>
   出勤する

@@ -1,5 +1,6 @@
 package dao;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,5 +56,50 @@ public class DayDao {
 
 		// 結果を返す
 		return day;
+	}
+	//日付insertくんを作ろう
+	public boolean dateInsert(Date date) {
+		Connection conn = null;
+		boolean insertResult = false;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// insert文を準備する
+			String sql = "insert into date (datetime) value=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setDate(1, date);
+
+			// insert文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			rs.next();
+			if (rs.getInt("count(*)") == 1) {
+				insertResult = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return insertResult;
 	}
 }

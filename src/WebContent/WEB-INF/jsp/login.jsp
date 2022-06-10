@@ -19,11 +19,11 @@
 	<div class="namepass">
 
 	<div class="nes-container is-rounded is-dark">
- <input type="text" name="ID" placeholder="Username"/><br>
+ <input type="text" name="user_id" placeholder="Username"/><br>
 </div>
 
 	<div class="nes-container is-rounded is-dark">
-<input type="password" name="PW" placeholder="Password"/><br>
+<input type="password" name="user_pass" placeholder="Password"/><br>
 </div>
 
 	</div>

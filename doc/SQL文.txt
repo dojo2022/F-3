@@ -32,6 +32,8 @@ Ex_point int,
 file_pass VARCHAR(50)
 );
 
+<カラム追加>
+ALTER TABLE character ADD have_flag BOOLEAN NOT NULL;
 
 <INSERT文>
 INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);

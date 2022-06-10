@@ -28,7 +28,7 @@
 
 	</div>
 <div class="btn">
-  <button data-hover="click me!" style=background-color: red:><div>Go to work!</div></button>
+  <button data-hover="click me!"><div>Go to work!</div></button>
   </div>
 </form>
 </body>

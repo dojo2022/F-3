@@ -38,7 +38,7 @@ public class BuyServlet extends HttpServlet {
 			response.sendRedirect("/nakao/LoginServlet");
 			return;
 		}
-
+/*保留*/
 	}
 
 }

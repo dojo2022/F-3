@@ -67,13 +67,15 @@ System.out.println(day1+","+day2);
 					// セッションスコープにIDを格納する
 					HttpSession session = request.getSession();
 					session.setAttribute("user", user); //何らかの処理(後で訊く)
-
+					System.out.println("ログイン成功");
 					// メニューサーブレットにリダイレクトする
 					response.sendRedirect("/nakao/MainServlet"); //パスは適当なので間違ってたら直してください
+
 				}
 				else {						// ログイン失敗
 					piyo=false;
 					request.setAttribute("flag",piyo);
+					System.out.println("ログイン失敗");
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 					dispatcher.forward(request, response);
 				}

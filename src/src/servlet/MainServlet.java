@@ -78,7 +78,9 @@ public class MainServlet extends HttpServlet {
 //ここからキャラクター関係の処理
 		int charId=uDao.char_id();
 		Chara growing=cDao.inf(charId);//育成中のキャラクター
-
+//フォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

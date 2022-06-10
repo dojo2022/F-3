@@ -29,9 +29,7 @@ public class ResultServlet extends HttpServlet {
 			}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
@@ -39,6 +37,7 @@ public class ResultServlet extends HttpServlet {
 			response.sendRedirect("/nakao/LoginServlet");
 			return;
 		}
+
 
 		CharaDao cDao=new CharaDao();
 		UserDao uDao=new UserDao();

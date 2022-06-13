@@ -1,6 +1,5 @@
 package dao;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +30,7 @@ public class DayDao {
 
 			//
 			rs.next();
-			day.setDate(rs.getDate("DATETIME"));
+			day.setDate(rs.getString("DATETIME"));
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -58,7 +57,7 @@ public class DayDao {
 		return day;
 	}
 	//日付insertくんを作ろう
-	public boolean dateInsert(Date date) {
+	public boolean dateInsert(String date) {
 		Connection conn = null;
 		boolean insertResult = false;
 		try {
@@ -69,15 +68,14 @@ public class DayDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// insert文を準備する
-			String sql = "insert into date (datetime) value=?";
+			String sql = "insert into date (datetime) values(?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setDate(1, date);
+			pStmt.setString(1, date);
 
 			// insert文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
+			int rs = pStmt.executeUpdate();
 
-			rs.next();
-			if (rs.getInt("count(*)") == 1) {
+			if (rs == 1) {
 				insertResult = true;
 			}
 		}

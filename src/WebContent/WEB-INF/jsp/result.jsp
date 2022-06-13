@@ -18,7 +18,9 @@
 	<!-- 獲得した経験値を取得 -->
 
 	<!-- 画面を閉じる -->
-	<button>OK</button>
+	<form method="POST" action="/nakao/ResultServlet">
+		<button>OK</button>
+	</form>
 </body>
 </html>
 <!--resultCharaに情報を格納しています by内田-->

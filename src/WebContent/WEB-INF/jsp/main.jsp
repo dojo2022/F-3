@@ -10,9 +10,20 @@
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/main.js"></script>
 </head>
+<frameset cols="200,*,200">
+
+<frame src="example_a.html" name="frame1" title="左フレーム">
+<frame src="example_b.html" name="frame2" title="中フレーム">
+<frame src="example_c.html" name="frame3" title="右フレーム">
+
+<noframes>
 <body>
-<ul="mission_katati">
-<li>
+<p>フレームの代替内容</p>
+</body>
+</noframes>
+
+</frameset>
+<body>
 <div class="mission_c">
 				<button id="btn1">
 				  <div>
@@ -31,10 +42,25 @@
 				   データベースのミッション3が表示<img src="/nakao/img/.jpg" width="" height="">
 				  </div>
 				</button>
+
+  <div>
+ 		<p>データベースのミッション1が表示</p>
+        <input type="button" value="&#x2714;" onclick="check1()" id="btn1">
+  </div>
+
+  <div>
+ 		<p>データベースのミッション2が表示</p>
+        <input type="button" value="&#x2714;" onclick="check2()" id="btn2">
+  </div>
+
+  <div>
+ 		<p>データベースのミッション3が表示</p>
+        <input type="button" value="&#x2714;" onclick="check3()" id="btn3">
+  </div>
 </div>
-</li>
+
 				<!-- 真ん中の画面 -->
-<li>
+
 <div class="chara" >
 
 					<div class="sute">
@@ -53,9 +79,9 @@
 				   </a>
 				  </div>
 				</button>
-</li>
+
 				<!-- 右の画面 -->
-				<li>
+
 <div class="migi">
 
 				  <button>
@@ -84,7 +110,5 @@
 
                  </div>
  </div>
-</li>
-</ul>
 </body>
 </html>

@@ -35,7 +35,7 @@ public class MainServlet extends HttpServlet {
 				response.sendRedirect("/nakao/LoginServlet");
 				return;
 			}
-			// メインページにフォワードする
+
 			final int loginPoint=3; //ログボでもらえるポイント
 
 			int nowPoint;

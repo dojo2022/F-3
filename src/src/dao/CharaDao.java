@@ -41,7 +41,8 @@ public class CharaDao {
 				Chara a= new Chara(rs.getInt("char_id"),
 						(rs.getString("name")),
 						(rs.getInt("Ex_point")),
-						(rs.getString("file_pass")));
+						(rs.getString("file_pass")),
+						(rs.getBoolean("have_flag")));
 				inf.add(a);
 			}
 		nana = inf.get(0);
@@ -95,7 +96,8 @@ public class CharaDao {
 				Chara a= new Chara(rs.getInt("char_id"),
 						(rs.getString("name")),
 						(rs.getInt("ex_point")),
-						(rs.getString("file_pass")));
+						(rs.getString("file_pass")),
+						(rs.getBoolean("have_flag")));
 				inf.add(a);
 			}
 		}
@@ -123,7 +125,58 @@ public class CharaDao {
 		// 結果を返す
 		return inf;
 	}
+	public List<Chara> havingChara(){//所持キャラクターを取得
 
+		List<Chara> inf = new ArrayList<Chara>();
+
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// SELECT文を準備する
+			String sql = "select * from character where have_flag=true";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SELECT文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			while (rs.next()) {
+				Chara a= new Chara(rs.getInt("char_id"),
+						(rs.getString("name")),
+						(rs.getInt("ex_point")),
+						(rs.getString("file_pass")),
+						(rs.getBoolean("have_flag")));
+				inf.add(a);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			inf = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			inf = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				 inf = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return inf;
+	}
 
 //経験値を更新するメソッドを作る
 	public boolean updateExp(int num,int id) { //

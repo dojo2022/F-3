@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.CharaDao;
 import dao.UserDao;
-import model.Chara;
 
 /**
  * Servlet implementation class ResultServlet
@@ -24,7 +23,7 @@ public class ResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 			HttpSession session = request.getSession();
-			if (session.getAttribute("id") == null) {
+			if (session.getAttribute("user") == null) {
 				response.sendRedirect("/nakao/LoginServlet");
 				return;
 			}
@@ -34,20 +33,25 @@ public class ResultServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("user") == null) {
 			response.sendRedirect("/nakao/LoginServlet");
 			return;
 		}
-
 
 		CharaDao cDao=new CharaDao();
 		UserDao uDao=new UserDao();
 
 //経験値を取り出す
+		String str=request.getParameter("");//jspと連携
 		int exp=0;
-		int charId=uDao.char_id();
-		Chara growing=cDao.inf(charId);
-		exp=growing.getEx_point();//経験値
+		try{
+			exp=Integer.parseInt(str);
+		}catch(Exception e){
+			System.out.println("exp="+str);
+		}
+		cDao.updateExp(exp,uDao.char_id());
+
+
 //フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 		dispatcher.forward(request, response);

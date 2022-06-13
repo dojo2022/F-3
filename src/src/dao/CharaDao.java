@@ -125,7 +125,55 @@ public class CharaDao {
 	}
 
 
+//経験値を更新するメソッドを作る
+	public boolean updateExp(int num,int id) { //
 
 
+		Connection conn = null;
+		boolean nana = false;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// SELECT文を準備する
+			String sql = "update character set ex_point=? where char_id=?";//char_idは任意の値にしてください(auto_incrementはずれることがあります)
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setInt(1, num);
+			if(id!=0){
+				pStmt.setInt(2, id);
+			}else{
+				pStmt.setInt(2, 0);
+			}
+
+			if (pStmt.executeUpdate() == 1) {
+				 nana=true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return nana;
+
+	}
 }
 

@@ -30,7 +30,7 @@ public class DayDao {
 
 			//
 			rs.next();
-			day.setDate(rs.getDate("DATETIME"));
+			day.setDate(rs.getString("DATETIME"));
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -55,5 +55,49 @@ public class DayDao {
 
 		// 結果を返す
 		return day;
+	}
+	//日付insertくんを作ろう
+	public boolean dateInsert(String date) {
+		Connection conn = null;
+		boolean insertResult = false;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// insert文を準備する
+			String sql = "insert into date (datetime) values(?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, date);
+
+			// insert文を実行し、結果表を取得する
+			int rs = pStmt.executeUpdate();
+
+			if (rs == 1) {
+				insertResult = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return insertResult;
 	}
 }

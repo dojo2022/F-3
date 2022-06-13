@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -30,14 +31,17 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		DayDao ddao=new DayDao();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
 		Day day1=ddao.select(new Day()); //古いデータ
 		Day day2=new Day(); //新しいデータ
 System.out.println(day1+","+day2);
-		day2.setDate(new Date());
+		String nowDate=sdf.format(new Date());
+		day2.setDate(nowDate);
 
 		if(day1.getDate().equals(day2.getDate())){
 			response.sendRedirect("/nakao/MainServlet");
 		}else{
+
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}

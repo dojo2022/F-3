@@ -183,7 +183,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "update user set tpoint=tpoint+? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
+			String sql = "update user set point=point+? where user_id=1";//user_idは任意の値にしてください(auto_incrementはずれることがあります)
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setInt(1, num);

@@ -27,6 +27,28 @@ public class ResultServlet extends HttpServlet {
 				response.sendRedirect("/nakao/LoginServlet");
 				return;
 			}
+
+
+			CharaDao cDao=new CharaDao();
+			UserDao uDao=new UserDao();
+
+	//経験値を保存する
+			String str=request.getParameter("");//jspと連携
+			int exp=0;
+			try{
+				exp=Integer.parseInt(str);
+			}catch(Exception e){
+				System.out.println("exp="+str);
+			}
+			cDao.updateExp(exp,uDao.char_id()); //経験値を保存
+
+//スコープに入れる
+			request.setAttribute("resultChara", cDao.inf(uDao.char_id()));
+
+	//フォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+			dispatcher.forward(request, response);
+
 	}
 
 
@@ -38,22 +60,5 @@ public class ResultServlet extends HttpServlet {
 			return;
 		}
 
-		CharaDao cDao=new CharaDao();
-		UserDao uDao=new UserDao();
-
-//経験値を取り出す
-		String str=request.getParameter("");//jspと連携
-		int exp=0;
-		try{
-			exp=Integer.parseInt(str);
-		}catch(Exception e){
-			System.out.println("exp="+str);
-		}
-		cDao.updateExp(exp,uDao.char_id());
-
-
-//フォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-		dispatcher.forward(request, response);
 	}
 }

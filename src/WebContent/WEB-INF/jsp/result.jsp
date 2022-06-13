@@ -21,3 +21,4 @@
 	<button>OK</button>
 </body>
 </html>
+<!--resultCharaに情報を格納しています by内田-->

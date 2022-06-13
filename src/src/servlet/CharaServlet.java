@@ -44,8 +44,8 @@ public class CharaServlet extends HttpServlet {
 			Chara growing=cDao.inf(charId);//育成中のキャラクター
 	//スコープに入れる
 
-				request.setAttribute("charaList",charaList);
-				request.setAttribute("growing",growing);
+			request.setAttribute("charaList",charaList);
+			request.setAttribute("growing",growing);
 
 	//フォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chara.jsp");
@@ -63,7 +63,9 @@ public class CharaServlet extends HttpServlet {
 			response.sendRedirect("/nakao/LoginServlet");
 			return;
 		}
+
 		UserDao uDao=new UserDao();
+
 		if (request.getParameter("SUBMIT").equals("変更")) {
 			String str=request.getParameter("charId");
 			int id=0;
@@ -72,7 +74,11 @@ public class CharaServlet extends HttpServlet {
 			}catch(Exception e){
 				System.out.println(e);
 			}
-			uDao.updateChara(id);
+			boolean result=uDao.updateChara(id);
+			System.out.println("charachange"+result);
+		}else if(request.getParameter("SUBMIT").equals("戻る")){ //
+			response.sendRedirect("/nakao/MainServlet");
+			return;
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chara.jsp");
 		dispatcher.forward(request, response);

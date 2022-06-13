@@ -13,20 +13,18 @@
 <body>
 
 <div class="mission_c">
-  <div>
- 		<p>データベースのミッション1が表示</p>
-        <input type="button" value="&#x2714;" onclick="check1()" id="btn1">
-  </div>
-
-  <div>
- 		<p>データベースのミッション2が表示</p>
-        <input type="button" value="&#x2714;" onclick="check2()" id="btn2">
-  </div>
-
-  <div>
- 		<p>データベースのミッション3が表示</p>
-        <input type="button" value="&#x2714;" onclick="check3()" id="btn3">
-  </div>
+        <div class="miss1">
+            <span id="mission1">ミッション1</span>
+            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
+        </div>
+        <div class="miss2">
+            <span id="mission2">ミッション2</span>
+            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
+        </div>
+        <div class="miss3">
+            <span id="mission3">ミッション3</span>
+            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
+        </div>
 </div>
 
 <!-- 真ん中の画面 -->

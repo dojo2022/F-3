@@ -42,3 +42,5 @@ UPDATE date SET datetime = '2022/06/12' WHERE date_id = 1;
 <INSERT文>
 INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);
 INSERT INTO DATE (datetime) VALUES ('2022-06-09');
+
+

@@ -34,7 +34,9 @@
 <div class="center">
 <div class="chara" >
   <div class="sute">
-		<p>Lv:<!-- 経験値から割り出す--> Ex: ${growing.getEx_point()} ${growing.getName()}</p>
+		Lv:<span></span>
+		Ex:<p id = "PassageArea">${growing.getEx_point()}</p>
+		Name:<span> ${growing.getName()}</span>
   </div>
   <div class="charaimg">
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
@@ -47,16 +49,17 @@
     変更<!-- キャラクターの変更ボタン--><img src="/nakao/img/.jpg" width="" height="">
     </a>
   </div>
+  </button>
 </div>
 <!-- 右の画面 -->
 <div class="right">
-  <button>
+<form method = GET action = "/nakao/ResultServlet">
+  <button id = "chdv">
   <div>
-  <a href="/nakao/ResultServlet">
    退勤<img src="/nakao/img/.jpg" width="" height="">
-  </a>
   </div>
 </button>
+</form>
 <p>Tポイント: ${Tpoint}</p>
 <div class="egg">
   <div class="eggA">
@@ -92,5 +95,20 @@
   width: 20%;
 }
 </style>
+<script>
+
+let pa = document.getElementById("PassageArea");
+
+function showPassage(pa) {
+    pa.textContent = parseInt(pa.textContent)+ 1;
+}
+
+window.onload = function() {
+    PassageID = setInterval('showPassage(pa)',1000);
+}
+
+</script>
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/main.js"></script>
 </body>
 </html>

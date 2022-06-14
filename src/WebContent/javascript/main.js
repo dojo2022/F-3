@@ -23,10 +23,5 @@
         cbtn.value = "済";
         cbtn.disabled = 'true';
     }
-		let value = document.getElementById('PassageArea');
-		let chdv = document.createElement('chdv');
-		let chbtn = document.createElement('input');
-		    chbtn.type = "hidden";
-		    chbtn.value =  value.textContent;
-			chdv.appendChild(chbtn);
+
 

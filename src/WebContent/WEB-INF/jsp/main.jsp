@@ -13,7 +13,7 @@
 
 <body id="main">
 <div class="left">
-
+</div>
 
 <div class="mission_c">
         <div class="miss1">
@@ -54,11 +54,12 @@
 <!-- 右の画面 -->
 <div class="right">
 <form method = GET action = "/nakao/ResultServlet">
-  <button id = "chdv">
+  <button>
   <div>
    退勤<img src="/nakao/img/.jpg" width="" height="">
   </div>
 </button>
+<input id="hide_ex" type="hidden" name="EX" value="">
 </form>
 <p>Tポイント: ${Tpoint}</p>
 <div class="egg">
@@ -98,9 +99,11 @@
 <script>
 
 let pa = document.getElementById("PassageArea");
+let ex = document.getElementById('hide_ex');
 
 function showPassage(pa) {
     pa.textContent = parseInt(pa.textContent)+ 1;
+    ex.value = pa.textContent;
 }
 
 window.onload = function() {

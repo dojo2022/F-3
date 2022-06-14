@@ -33,7 +33,7 @@ public class ResultServlet extends HttpServlet {
 			UserDao uDao=new UserDao();
 
 	//経験値を保存する
-			String str=request.getParameter("");//jspと連携
+			String str=request.getParameter("EX");
 			int exp=0;
 			try{
 				exp=Integer.parseInt(str);

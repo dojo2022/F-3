@@ -51,3 +51,8 @@ INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('サラリ�
 
 //chara
 UPDATE CHARACTER SET file_pass = 'poyopoyokinoko.gif' WHERE char_id = 1;
+
+//mission
+INSERT INTO MISSION (sentence) VALUES ("ミッション1");
+INSERT INTO MISSION (sentence) VALUES ("ミッション2");
+INSERT INTO MISSION (sentence) VALUES ("ミッション3");

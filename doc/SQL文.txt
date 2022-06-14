@@ -35,10 +35,17 @@ file_pass VARCHAR(50)
 <カラム追加>
 ALTER TABLE character ADD have_flag BOOLEAN NOT NULL;
 
+//date
 ALTER TABLE date DROP datetime;
 ALTER TABLE date ADD datetime varchar(20);
 UPDATE date SET datetime = '2022/06/12' WHERE date_id = 1;
 
+
 <INSERT文>
 INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);
 INSERT INTO DATE (datetime) VALUES ('2022-06-09');
+
+//chara
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('ぽよぽよキノコ', 0, '/nakao/img/poyopoyokinoko.gif', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('サラリーマン', 0, '/nakao/img/walking_businessman2.png', true);
+

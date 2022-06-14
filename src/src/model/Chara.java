@@ -6,13 +6,15 @@ public class Chara implements Serializable{
 	private String name;
 	private int Ex_point;
 	private String file_pass;
+	private boolean have_flag;
 
-	public Chara(int char_id, String name, int ex_point, String file_pass) {
+	public Chara(int char_id, String name, int ex_point, String file_pass, boolean have_flag) {
 		super();
 		this.char_id = char_id;
 		this.name = name;
 		Ex_point = ex_point;
 		this.file_pass = file_pass;
+		this.have_flag=have_flag;
 	}
 
 	public Chara() {
@@ -21,6 +23,7 @@ public class Chara implements Serializable{
 		this.name = "";
 		Ex_point = 0;
 		this.file_pass = "";
+		this.have_flag=false;
 	}
 
 	public int getChar_id() {
@@ -53,6 +56,14 @@ public class Chara implements Serializable{
 
 	public void setFile_pass(String file_pass) {
 		this.file_pass = file_pass;
+	}
+
+	public boolean isHave_flag() {
+		return have_flag;
+	}
+
+	public void setHave_flag(boolean have_flag) {
+		this.have_flag = have_flag;
 	}
 
 

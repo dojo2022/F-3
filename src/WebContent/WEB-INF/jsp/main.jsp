@@ -10,6 +10,7 @@
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/main.js"></script>
 </head>
+
 <body id="main">
 <div class="left">
   <div class="mission_c">
@@ -27,6 +28,23 @@
         <input type="button" value="✓" onclick="return check()">
     </div>
   </div>
+
+<body>
+
+<div class="mission_c">
+        <div class="miss1">
+            <span id="mission1">ミッション1</span>
+            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
+        </div>
+        <div class="miss2">
+            <span id="mission2">ミッション2</span>
+            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
+        </div>
+        <div class="miss3">
+            <span id="mission3">ミッション3</span>
+            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
+        </div>
+
 </div>
 <!-- 真ん中の画面 -->
 <div class="center">

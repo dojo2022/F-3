@@ -30,6 +30,13 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
+		if (session.getAttribute("user") == null) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+
 		DayDao ddao=new DayDao();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
 		Day day1=ddao.select(new Day()); //古いデータ
@@ -38,9 +45,9 @@ System.out.println(day1+","+day2);
 		String nowDate=sdf.format(new Date());
 		day2.setDate(nowDate);
 
-		if(day1.getDate().equals(day2.getDate())){
+		if(day1.getDate().equals(day2.getDate())){//同じなら
 			response.sendRedirect("/nakao/MainServlet");
-		}else{
+		}else{//違ったら
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);

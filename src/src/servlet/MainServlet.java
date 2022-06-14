@@ -16,6 +16,7 @@ import dao.CharaDao;
 import dao.DayDao;
 import dao.MissionDao;
 import dao.UserDao;
+import model.Chara;
 import model.Day;
 
 /**
@@ -35,7 +36,7 @@ public class MainServlet extends HttpServlet {
 				response.sendRedirect("/nakao/LoginServlet");
 				return;
 			}
-			// メインページにフォワードする
+
 			final int loginPoint=3; //ログボでもらえるポイント
 
 			int nowPoint;
@@ -68,13 +69,13 @@ public class MainServlet extends HttpServlet {
 	//		missionList=mDao.select(new Mission()); //ミッション三つ これを渡す
 
 	//ここからキャラクター関係の処理
-	//		int charId=uDao.char_id();
-	//		Chara growing=cDao.inf(charId);//育成中のキャラクター
+			int charId=uDao.char_id();
+			Chara growing=cDao.inf(charId);//育成中のキャラクター
 
 	//この辺でデータをスコープに入れる
 			request.setAttribute("Tpoint",nowPoint);
 	//		request.setAttribute("mission",missionList);
-	//		request.setAttribute("growing", growing);
+			request.setAttribute("growing", growing);
 
 
 	//フォワードする
@@ -85,7 +86,7 @@ public class MainServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/*	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user") == null) {
@@ -95,5 +96,5 @@ public class MainServlet extends HttpServlet {
 
 
 	}
-
+*/
 }

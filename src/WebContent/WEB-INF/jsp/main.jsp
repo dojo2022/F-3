@@ -17,15 +17,15 @@
 
 <div class="mission_c">
         <div class="miss1">
-            <span id="mission1">ミッション1</span>
+            <span id="mission1">${mission[0].getMission()}</span>
             <input type="button" value="✓" onclick="check1()" id="clearbtn1">
         </div>
         <div class="miss2">
-            <span id="mission2">ミッション2</span>
+            <span id="mission2">${mission[1].getMission()}</span>
             <input type="button" value="✓" onclick="check2()" id="clearbtn2">
         </div>
         <div class="miss3">
-            <span id="mission3">ミッション3</span>
+            <span id="mission3">${mission[2].getMission()}</span>
             <input type="button" value="✓" onclick="check3()" id="clearbtn3">
         </div>
 
@@ -34,7 +34,7 @@
 <div class="center">
 <div class="chara" >
   <div class="sute">
-Lv:<!-- 経験値から割り出す--> Ex: ${growing.getEx_point()} ${growing.getName()}
+		<p>Lv:<!-- 経験値から割り出す--> Ex: ${growing.getEx_point()} ${growing.getName()}</p>
   </div>
   <div class="charaimg">
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">

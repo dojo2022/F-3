@@ -13,7 +13,6 @@
 <body>
 <!-- 選択中のキャラ -->
 
-
  	<button>
  	<div class = "backbtn">
   	<a href="/nakao/MainServlet">
@@ -24,10 +23,10 @@
 
 	<div class = "charabox">
 	 	<div class = "sutechange">
-		 	Lv:<経験値から割り出す> <データベースからname>
+		 	Lv:<経験値から割り出す> ${growing.getName()}
 		</div>
 		<div class="imgchange">
-		    キャラクターのGIFを貼る。chara_idで区別
+		   <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
 		</div>
 	</div>
 
@@ -38,7 +37,18 @@
 
 	<h1>キャラ一覧</h1>
 	<div class = "subbox">
+	<c:forEach var = "e" items = "${charaList}">
+	<div class = "items">
+		<div class = "sutechange">
+		 	<p>Lv:<経験値から割り出す> <c:out value = "${e.name}"/></p>
+		</div>
+		<div class="imgchange">
+		   <img src="/nakao/img/main_image/${e.file_pass}" width="" height="">
+		</div>
 	</div>
+	</c:forEach>
+	</div>
+
 
 </body>
 </html>

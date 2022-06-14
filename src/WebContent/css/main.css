@@ -1,35 +1,15 @@
 @charset "UTF-8";
   /* 全体 */
-.mission_katati{
-	display:flex;
-}
-.mission_katati li {
-  width: calc(100% / 3);
-}
 
-ul,
-li {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-
-li {
-  background: #ccc;
-  text-align: center;
-  padding: 20px 0;
-  border: 1px solid #fff;
-}
   /* 左画面 */
-.mission_c{
+.left{
 
 }
   /* 中画面 */
-.chara{
+.center{
 
 }
   /* 右画面 */
-.migi{
+.light{
 
 }

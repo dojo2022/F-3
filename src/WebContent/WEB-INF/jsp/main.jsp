@@ -13,23 +13,7 @@
 
 <body id="main">
 <div class="left">
-  <div class="mission_c">
-    <div>
-      <!-- データベースのミッションを表示 -->
-      <span class="mission">ミッション1</span>
-          <input type="button" value="✓" onclick="return check()" >
-    </div>
-    <div>
-      <span class="mission">ミッション2</span>
-        <input type="button" value="✓" onclick="return check()">
-    </div>
-    <div>
-      <span class="mission">ミッション3</span>
-        <input type="button" value="✓" onclick="return check()">
-    </div>
-  </div>
 
-<body>
 
 <div class="mission_c">
         <div class="miss1">
@@ -50,10 +34,11 @@
 <div class="center">
 <div class="chara" >
   <div class="sute">
-Lv:<!-- 経験値から割り出す-->　Ex:<!-- データベースからをEx_point -->　名前<!--データベースからname-->
+Lv:<!-- 経験値から割り出す--> Ex: ${growing.getEx_point()} ${growing.getName()}
   </div>
   <div class="charaimg">
-    キャラクターのGIFを貼る。<!-- chara_idで区別 -->
+    <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
+
   </div>
 </div>
   <button>
@@ -72,7 +57,7 @@ Lv:<!-- 経験値から割り出す-->　Ex:<!-- データベースからをEx_p
   </a>
   </div>
 </button>
-<p>Tポイント:<!-- データベースからpoint --></p>
+<p>Tポイント: ${Tpoint}</p>
 <div class="egg">
   <div class="eggA">
     卵の画像<img src="/nakao/img/.jpg" width="" height="">

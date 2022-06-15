@@ -34,6 +34,16 @@ public class CharaServlet extends HttpServlet {
 			CharaDao cDao=new CharaDao();
 			UserDao uDao=new UserDao();
 
+			//経験値を保存する
+			String str=request.getParameter("EX");
+			int exp=0;
+			try{
+				exp=Integer.parseInt(str);
+			}catch(Exception e){
+				System.out.println("exp="+str);
+			}
+			cDao.updateExp(exp,uDao.char_id()); //経験値を保存
+
 	//ここから所持キャラクターを取り出す処理
 			List<Chara> charaList=new ArrayList<Chara>();
 			charaList=cDao.havingChara(); //全てのキャラクターのリスト

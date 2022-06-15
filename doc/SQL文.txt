@@ -46,8 +46,11 @@ INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);
 INSERT INTO DATE (datetime) VALUES ('2022-06-09');
 
 //chara
-INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('ぽよぽよキノコ', 0, '/nakao/img/poyopoyokinoko.gif', true);
-INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('サラリーマン', 0, '/nakao/img/walking_businessman2.png', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('ぽよぽよキノコ', 0, 'poyopoyokinoko.gif', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('サラリーマン', 0, 'walking_businessman2.png', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('マグロっち', 0, 'maguro_nakaochi.gif', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('たまごやき', 0, 'tamagoyaki.gif', true);
+INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('PCくん', 0, 'pc.gif', true);
 
 //chara
 UPDATE CHARACTER SET file_pass = 'poyopoyokinoko.gif' WHERE char_id = 1;

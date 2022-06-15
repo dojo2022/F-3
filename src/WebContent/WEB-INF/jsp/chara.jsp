@@ -13,14 +13,13 @@
 </head>
 <body>
 <!-- 選択中のキャラ -->
-
- 	<button>
  	<div class = "backbtn">
-  	<a href="/nakao/MainServlet">
+	<form method = POST action = "/nakao/CharaServlet">
+ 	<button>
    	戻るボタン<img src="/nakao/img/.jpg" width="" height="">
-   	</a>
- 	</div>
  	</button>
+ 	</form>
+ 	</div>
 
 	<div class = "charabox">
 	 	<div class = "sutechange">
@@ -32,7 +31,10 @@
 	</div>
 
 	<div class = "change">
-		<button >変更</button>
+	<form method = POST action = "/nakao/CharaServlet">
+	<button >変更</button>
+	<input id="hide_charId" type="hidden" name="charId" value="">
+	</form>
 	</div>
 
 
@@ -41,7 +43,9 @@
 	<c:forEach var = "e" items = "${charaList}">
 	<div class = "items">
 		<div class = "sutechange">
-		 	<p>Lv:<経験値から割り出す> <c:out value = "${e.name}"/></p>
+		 	Lv:<span id = "Level"></span>
+		 	Name:<span><c:out value = "${e.name}"/></span>
+		 	<span id = "PassageArea" hidden><c:out value = "${e.ex_point}"/></span>
 		</div>
 		<div class="imgchange">
 		   <img src="/nakao/img/main_image/${e.file_pass}" width="" height="">
@@ -50,6 +54,26 @@
 	</c:forEach>
 	</div>
 
+<script>
+let pa = document.getElementById("PassageArea");
+let lv = document.getElementById('Level');
+let exp = parseInt(pa.textContent);
+let levelCount = 0;
 
+while(exp > 0)
+{
+	if(exp < 0)
+	{
+		break;
+	}
+	else
+	{
+		exp = exp - (100 + (5 * levelCount));
+    	levelCount = levelCount + 1;
+	}
+}
+lv.textContent = levelCount;
+console.log(levelCount);
+</script>
 </body>
 </html>

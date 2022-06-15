@@ -34,22 +34,22 @@
 <div class="center">
 <div class="chara" >
   <div class="sute">
-		Lv:<span></span>
-		Ex:<p id = "PassageArea">${growing.getEx_point()}</p>
+		Lv:<span id = "Level"></span>
+		Ex:<span id = "PassageArea">${growing.getEx_point()}</span>
 		Name:<span> ${growing.getName()}</span>
   </div>
   <div class="charaimg">
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
-
   </div>
 </div>
+<form method = GET action = "/nakao/CharaServlet">
   <button>
   <div>
-    <a href="/nakao/CharaServlet">
-    変更<!-- キャラクターの変更ボタン--><img src="/nakao/img/.jpg" width="" height="">
-    </a>
+    変更<img src="/nakao/img/.jpg" width="" height="">
   </div>
   </button>
+ <input id="hide_ex1" type="hidden" name="EX" value="">
+</form>
 </div>
 <!-- 右の画面 -->
 <div class="right">
@@ -59,20 +59,21 @@
    退勤<img src="/nakao/img/.jpg" width="" height="">
   </div>
 </button>
-<input id="hide_ex" type="hidden" name="EX" value="">
+<input id="hide_ex2" type="hidden" name="EX" value="">
 </form>
 <p>Tポイント: ${Tpoint}</p>
 <div class="egg">
   <div class="eggA">
     卵の画像<img src="/nakao/img/.jpg" width="" height="">
   </div>
+<form method = GET action = "/nakao/BuyServlet">
   <button>
     <div class="eggB">
-      <a href="/nakao/BuyServlet">
         購入のボタン<img src="/nakao/img/.jpg" width="" height="">
-      </a>
     </div>
   </button>
+<input id="hide_ex3" type="hidden" name="EX" value="">
+</form>
 </div>
 </div>
 <style>
@@ -99,11 +100,35 @@
 <script>
 
 let pa = document.getElementById("PassageArea");
-let ex = document.getElementById('hide_ex');
+let ex1 = document.getElementById('hide_ex1');
+let ex2 = document.getElementById('hide_ex2');
+let ex3 = document.getElementById('hide_ex3');
+let lv = document.getElementById('Level');
+
 
 function showPassage(pa) {
     pa.textContent = parseInt(pa.textContent)+ 1;
-    ex.value = pa.textContent;
+    ex1.value = pa.textContent;
+    ex2.value = pa.textContent;
+    ex3.value = pa.textContent;
+
+    let exp = parseInt(pa.textContent);
+    let levelCount = 0;
+
+    while(exp > 0)
+    {
+    	if(exp < 0)
+    	{
+    		break;
+    	}
+    	else
+    	{
+    		exp = exp - (100 + (5 * levelCount));
+        	levelCount = levelCount + 1;
+    	}
+    }
+	lv.textContent = levelCount;
+    console.log(levelCount);
 }
 
 window.onload = function() {

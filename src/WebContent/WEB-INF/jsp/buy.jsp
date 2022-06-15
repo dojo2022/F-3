@@ -25,22 +25,9 @@
 		</a>
 	</div>
 
-<script>
-'use strict';
 
-let v = document.getElementById('video');
-function change(){
-    v.play();
-    gachabtn.disabled = true;
-}
-
-function finish(){
-    backbtn1.disabled = false;
-}
-</script>
-<!--
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/buy.js"></script>
--->
+
 </body>
 </html>

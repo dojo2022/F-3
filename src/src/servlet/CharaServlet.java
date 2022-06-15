@@ -76,7 +76,16 @@ public class CharaServlet extends HttpServlet {
 
 		UserDao uDao=new UserDao();
 
-		if (request.getParameter("SUBMIT").equals("変更")) {
+		String sub = request.getParameter("SUBMIT");
+		if (sub == null) {
+			System.out.println("SUBMITはnullだよ");
+		}
+		if (sub.isEmpty()) {
+			System.out.println("SUBMITはからだよ");
+		}
+		System.out.println(sub);
+
+		if (sub.equals("1")) {
 			String str=request.getParameter("charId");
 			int id=0;
 			try{
@@ -86,12 +95,13 @@ public class CharaServlet extends HttpServlet {
 			}
 			boolean result=uDao.updateChara(id);
 			System.out.println("charachange"+result);
-		}else if(request.getParameter("SUBMIT").equals("戻る")){ //
+
+			response.sendRedirect("/nakao/CharaServlet");
+		}else{
 			response.sendRedirect("/nakao/MainServlet");
+			System.out.println("Mainへ");
 			return;
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chara.jsp");
-		dispatcher.forward(request, response);
+
 	}
 }
-//if (request.getParameter("SUBMIT").equals("更新")) {

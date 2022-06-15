@@ -42,7 +42,7 @@
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
   </div>
 </div>
-<form method = GET action = "/nakao/CharaServlet">
+<form method = "GET" action = "/nakao/CharaServlet">
   <button>
   <div>
     変更<img src="/nakao/img/.jpg" width="" height="">
@@ -53,7 +53,7 @@
 </div>
 <!-- 右の画面 -->
 <div class="right">
-<form method = GET action = "/nakao/ResultServlet">
+<form method = "GET" action = "/nakao/ResultServlet">
   <button>
   <div>
    退勤<img src="/nakao/img/.jpg" width="" height="">
@@ -66,7 +66,7 @@
   <div class="eggA">
     卵の画像<img src="/nakao/img/.jpg" width="" height="">
   </div>
-<form method = GET action = "/nakao/BuyServlet">
+<form method = "GET" action = "/nakao/BuyServlet">
   <button>
     <div class="eggB">
         購入のボタン<img src="/nakao/img/.jpg" width="" height="">

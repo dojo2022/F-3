@@ -14,10 +14,8 @@
 <body>
 <!-- 選択中のキャラ -->
  	<div class = "backbtn">
-	<form method = POST action = "/nakao/CharaServlet">
- 	<button>
-   	戻るボタン<img src="/nakao/img/.jpg" width="" height="">
- 	</button>
+	<form method = "POST" action = "/nakao/CharaServlet">
+	<button name="SUBMIT" value="0">戻る</button>
  	</form>
  	</div>
 
@@ -31,9 +29,9 @@
 	</div>
 
 	<div class = "change">
-	<form method = POST action = "/nakao/CharaServlet">
-	<button >変更</button>
-	<input id="hide_charId" type="hidden" name="charId" value="">
+	<form method = "POST" action = "/nakao/CharaServlet">
+	<button name="SUBMIT" value="1">変更</button>
+	<input id="hide_charId" type="hidden" name="charId" value="${growing.getChar_id()}">
 	</form>
 	</div>
 

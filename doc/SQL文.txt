@@ -59,3 +59,10 @@ UPDATE CHARACTER SET file_pass = 'poyopoyokinoko.gif' WHERE char_id = 1;
 INSERT INTO MISSION (sentence) VALUES ('挨拶');
 INSERT INTO MISSION (sentence) VALUES ('挨拶１');
 INSERT INTO MISSION (sentence) VALUES ('挨拶２');
+
+//misionClearテーブル
+CREATE TABLE MISSIONCLEAR (
+mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+sentence VARCHAR(30),
+cleared BOOLEAN
+);

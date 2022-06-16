@@ -60,6 +60,11 @@ INSERT INTO MISSION (sentence) VALUES ('挨拶');
 INSERT INTO MISSION (sentence) VALUES ('挨拶１');
 INSERT INTO MISSION (sentence) VALUES ('挨拶２');
 
+//missionclear
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶', false);
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶１', false);
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶２', false);
+
 //misionClearテーブル
 CREATE TABLE MISSIONCLEAR (
 mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,

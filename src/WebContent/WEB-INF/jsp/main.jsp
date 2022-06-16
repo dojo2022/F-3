@@ -51,31 +51,27 @@
  <input id="hide_ex1" type="hidden" name="EX" value="">
 </form>
 </div>
+
 <!-- 右の画面 -->
 <div class="right">
-<form method = "GET" action = "/nakao/ResultServlet">
-  <button>
-  <div>
-   退勤<img src="/nakao/img/.jpg" width="" height="">
-  </div>
-</button>
+<form method = "GET" name ="form1" action = "/nakao/ResultServlet" >
+<button id="endcount" type = button>退勤</button>
 <input id="hide_ex2" type="hidden" name="EX" value="">
+
 </form>
 <p>Tポイント: ${Tpoint}</p>
 <div class="egg">
   <div class="eggA">
     卵の画像<img src="/nakao/img/.jpg" width="" height="">
   </div>
-<form method = "GET" action = "/nakao/BuyServlet">
-  <button>
-    <div class="eggB">
-        購入のボタン<img src="/nakao/img/.jpg" width="" height="">
-    </div>
-  </button>
+<form method = "GET" name = "form2"action = "/nakao/BuyServlet">
+<button id="confirm-demo" type ="button">購入</button>
 <input id="hide_ex3" type="hidden" name="EX" value="">
 </form>
 </div>
 </div>
+
+</body>
 <style>
 #main {
   display: flex;
@@ -97,6 +93,7 @@
   width: 20%;
 }
 </style>
+
 <script>
 
 let pa = document.getElementById("PassageArea");
@@ -135,8 +132,74 @@ window.onload = function() {
     PassageID = setInterval('showPassage(pa)',1000);
 }
 
+function check1(){
+    var ms = document.getElementById('mission1');
+    var cbtn = document.getElementById('clearbtn1');
+    ms.style.color = '#C0C0C0'; /* 文字の色を薄くする */
+    ms.style.textDecoration = "line-through"; /* 取り消し線追加 */
+    cbtn.value = "済";
+    cbtn.disabled = 'true';
+
+    pa.textContent = parseInt(pa.textContent)+ 100;
+
+}
+function check2(){
+    var ms = document.getElementById('mission2');
+    var cbtn = document.getElementById('clearbtn2');
+    ms.style.color = '#C0C0C0';
+    ms.style.textDecoration = "line-through";
+    cbtn.value = "済";
+    cbtn.disabled = 'true';
+
+    pa.textContent = parseInt(pa.textContent)+ 100;
+}
+function check3(){
+    var ms = document.getElementById('mission3');
+    var cbtn = document.getElementById('clearbtn3');
+    ms.style.color = '#C0C0C0';
+    ms.style.textDecoration = "line-through";
+    cbtn.value = "済";
+    cbtn.disabled = 'true';
+
+    pa.textContent = parseInt(pa.textContent)+ 100;
+}
+
+document.getElementById("confirm-demo").onclick = function(){
+    var options = {
+        text: '卵を購入しますか？',
+        buttons: {
+            cancel: 'キャンセル',
+            ok: '購入する'
+        }
+    };
+    swal(options).then(function(value){
+            if(value){
+                document.form2.submit();
+            }
+        });
+    };
+
+document.getElementById("endcount").onclick = function(){
+    var options = {
+        text: '退勤しますか？',
+        buttons: {
+            cancel: 'キャンセル',
+            ok: '退勤する'
+        }
+    };
+
+   swal(options).then(function(value){
+     if(value){
+         document.form1.submit();
+      }
+    });
+
+};
+
+
+
 </script>
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/main.js"></script>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </html>

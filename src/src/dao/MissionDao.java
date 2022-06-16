@@ -27,7 +27,7 @@ public class MissionDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select mission_id, sentence from mission";
+			String sql = "select * from missionclear";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する
@@ -37,7 +37,8 @@ public class MissionDao {
 			while (rs.next()) {
 				Mission mission = new Mission (
 					rs.getInt("MISSION_ID"),
-					rs.getString("SENTENCE")
+					rs.getString("SENTENCE"),
+					rs.getBoolean("CLEARED")
 				);
 				missionList.add(mission);
 			}
@@ -47,6 +48,8 @@ public class MissionDao {
 			for(int i = 0; i < 3; i++){
 				returnList.add(missionList.get(i));
 			}
+			todayMission(returnList);
+
 
 		}
 		catch (SQLException e) {
@@ -73,4 +76,50 @@ public class MissionDao {
 		// 結果を返す
 		return returnList;
 	}
+
+	public void todayMission(List<Mission> missionList) {
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
+
+			// SQL文を準備する
+			for(int i = 0; i < 3; i++) {
+			String sql = "update missionclear set sentence = ?, cleared = ? where mission_id = ?";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, missionList.get(i).getMission());
+			pStmt.setBoolean(2, missionList.get(i).getCleared());
+			pStmt.setInt(3, missionList.get(i).getMission_id());
+			pStmt.executeUpdate();
+			}
+
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+	public List<Mission> returnMission() {
+
+	}
+
 }

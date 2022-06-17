@@ -36,7 +36,7 @@ public class MissionDao {
 				Mission mission = new Mission (
 					rs.getInt("MISSION_ID"),
 					rs.getString("SENTENCE"),
-					rs.getBoolean("CLEARED")
+					false
 				);
 				missionList.add(mission);
 			}
@@ -85,8 +85,8 @@ public class MissionDao {
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, returnList.get(i).getMission());
-			pStmt.setBoolean(2, true);
-			pStmt.setInt(3, returnList.get(i).getMission_id());
+			pStmt.setBoolean(2, false);
+			pStmt.setInt(3, (i + 1));
 			pStmt.executeUpdate();
 			}
 		}

@@ -7,25 +7,27 @@
 <title>卵購入</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/buy.css">
-<script src="/nakao/javascript/common.js"></script>
-<script src="/nakao/javascript/buy.js"></script>
 </head>
 <body>
-<button id="gachabtn">
+
 	<div>
-		<img src="/nakao/img/.jpg" width="" height="">
+		<button id = "gachabtn" onclick="change()">引く</button>
 	</div>
-</button>
 
-<!-- アニメーションを挟む -->
 
-<button>
+	<!-- アニメーション -->
+	<video id = "video" src="/nakao/img/sample.mp4" width="300" height="300" onended="finish()"></video>
+
+
 	<div class = "backbtn">
 		<a href="/nakao/MainServlet">
-			戻るボタン<img src="/nakao/img/.jpg" width="" height="">
+			<input type="button" value="戻る" id = "backbtn1" disabled>
 		</a>
 	</div>
-</button>
+
+
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/buy.js"></script>
 
 </body>
 </html>

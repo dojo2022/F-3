@@ -15,7 +15,9 @@
 	本日も一日お疲れ様でした。</p>
 
 	<!-- 日付と時間を取得 -->
-	<!-- 獲得した経験値を取得 -->
+	<div class="charaimage">
+		<img src="/nakao/img/result_image/${resultChara.getFile_pass()}" width="" height="">
+	</div>
 
 	<!-- 画面を閉じる -->
 	<form method="POST" action="/nakao/ResultServlet">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,33 +13,65 @@
 </head>
 <body>
 <!-- 選択中のキャラ -->
-
-
- 	<button>
  	<div class = "backbtn">
-  	<a href="/nakao/MainServlet">
-   	戻るボタン<img src="/nakao/img/.jpg" width="" height="">
-   	</a>
+	<form method = "POST" action = "/nakao/CharaServlet">
+	<button name="SUBMIT" value="0">戻る</button>
+ 	</form>
  	</div>
- 	</button>
 
 	<div class = "charabox">
 	 	<div class = "sutechange">
-		 	Lv:<経験値から割り出す> <データベースからname>
+		 	Lv:<経験値から割り出す> ${growing.getName()}
 		</div>
 		<div class="imgchange">
-		    キャラクターのGIFを貼る。chara_idで区別
+		   <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
 		</div>
 	</div>
 
 	<div class = "change">
-		<button >変更</button>
+	<form method = "POST" action = "/nakao/CharaServlet">
+	<button name="SUBMIT" value="1">変更</button>
+	<input id="hide_charId" type="hidden" name="charId" value="${growing.getChar_id()}">
+	</form>
 	</div>
 
 
 	<h1>キャラ一覧</h1>
 	<div class = "subbox">
+	<c:forEach var = "e" items = "${charaList}">
+	<div class = "items">
+		<div class = "sutechange">
+		 	Lv:<span id = "Level"></span>
+		 	Name:<span><c:out value = "${e.name}"/></span>
+		 	<span id = "PassageArea" hidden><c:out value = "${e.ex_point}"/></span>
+		</div>
+		<div class="imgchange">
+		   <img src="/nakao/img/main_image/${e.file_pass}" width="" height="">
+		</div>
+	</div>
+	</c:forEach>
 	</div>
 
+<script>
+let pa = document.getElementById("PassageArea");
+let lv = document.getElementById('Level');
+let exp = parseInt(pa.textContent);
+let levelCount = 0;
+
+while(exp > 0)
+{
+	if(exp < 0)
+	{
+		break;
+	}
+	else
+	{
+		exp = exp - (100 + (5 * levelCount));
+    	levelCount = levelCount + 1;
+	}
+}
+lv.textContent = levelCount;
+console.log(levelCount);
+</script>
 </body>
 </html>

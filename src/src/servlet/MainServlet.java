@@ -2,7 +2,9 @@ package servlet;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +20,7 @@ import dao.MissionDao;
 import dao.UserDao;
 import model.Chara;
 import model.Day;
-
+import model.Mission;
 /**
  * Servlet implementation class MainServlet
  */
@@ -59,14 +61,18 @@ public class MainServlet extends HttpServlet {
 				System.out.println(result);
 				nowPoint=uDao.updateTpoint(loginPoint);
 				System.out.println("Tpoint="+nowPoint); //デバッグ用 変更後のTポイント
+
+				List<Mission> missionList =new ArrayList<Mission>();
+				missionList=mDao.select();
+				mDao.todayMission(missionList);
 			}else{
 				nowPoint=uDao.updateTpoint(0);
 				System.out.println("TPOINT="+nowPoint);
 			}
 
 	//ここからミッション処理
-	//		List<Mission> missionList =new ArrayList<Mission>();
-	//		missionList=mDao.select(new Mission()); //ミッション三つ これを渡す
+			List<Mission> missionList =new ArrayList<Mission>();
+			missionList=mDao.returnMission(); //ミッション三つ これを渡す
 
 	//ここからキャラクター関係の処理
 			int charId=uDao.char_id();
@@ -74,7 +80,7 @@ public class MainServlet extends HttpServlet {
 
 	//この辺でデータをスコープに入れる
 			request.setAttribute("Tpoint",nowPoint);
-	//		request.setAttribute("mission",missionList);
+			request.setAttribute("mission",missionList);
 			request.setAttribute("growing", growing);
 
 

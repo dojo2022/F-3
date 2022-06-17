@@ -11,91 +11,111 @@
 <script src="/nakao/javascript/main.js"></script>
 </head>
 
+
 <body id="main">
+<!-- 左の画面 -->
 <div class="left">
-</div>
 
-<div class="mission_c">
-        <div class="miss1">
-            <span id="mission1">${mission[0].getMission()}</span>
-            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
-            <input type="hidden" value="${mission[0].getCleared()}" id="cleared1">
-        </div>
-        <div class="miss2">
-            <span id="mission2">${mission[1].getMission()}</span>
-            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
-            <input type="hidden" value="${mission[1].getCleared()}" id="cleared2">
-        </div>
-        <div class="miss3">
-            <span id="mission3">${mission[2].getMission()}</span>
-            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
-            <input type="hidden" value="${mission[2].getCleared()}" id="cleared3">
-        </div>
+	<div class="mission_c">
+	        <div class="miss1">
+	        	<br>
+	        	<h1>  <img src="/nakao/img/0tk32.png"></h1>
+	            <span id="mission1">${mission[0].getMission()}</span>
+	            <br>
+	            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
+	            <input type="hidden" value="${mission[0].getCleared()}" id="cleared1">
+	        </div>
+	        <br>
+	        <br>
+	        <br>
+	        <div class="miss2">
+	            <span id="mission2">${mission[1].getMission()}</span>
+	            <br>
+	            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
+	            <input type="hidden" value="${mission[1].getCleared()}" id="cleared2">
+	        </div>
+	        <br>
+	        <br>
+	        <br>
+	        <div class="miss3">
+	            <span id="mission3">${mission[2].getMission()}</span>
+	            <br>
+	            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
+	            <input type="hidden" value="${mission[2].getCleared()}" id="cleared3">
+	        </div>
 
+	</div>
 </div>
 <!-- 真ん中の画面 -->
 <div class="center">
 <div class="chara" >
   <div class="sute">
-		Lv:<span id = "Level"></span>
-		Ex:<span id = "PassageArea">${growing.getEx_point()}</span>
-		Name:<span> ${growing.getName()}</span>
+  <br>
+		<img src="/nakao/img/Lv.png" width="10%" ><span id = "Level"></span>
+		<img src="/nakao/img/Lv.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span>
+		<img src="/nakao/img/No.png" width="10%" ><span> ${growing.getName()}</span>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
   </div>
   <div class="charaimg">
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
   </div>
 </div>
-<form method = "GET" action = "/nakao/CharaServlet">
-  <button>
-  <div>
-    変更<img src="/nakao/img/.jpg" width="" height="">
-  </div>
-  </button>
- <input id="hide_ex1" type="hidden" name="EX" value="">
-</form>
+	<div class="chb">
+		<form method = "GET" action = "/nakao/CharaServlet">
+		  <button>
+		  <div>
+		    <img src="/nakao/img/change.png">
+		    <img src="/nakao/img/main_image/poyopoyokinoko.gif" width="14%" height="">
+		  </div>
+		  </button>
+		 <input id="hide_ex1" type="hidden" name="EX" value="">
+		</form>
+	</div>
 </div>
 
 <!-- 右の画面 -->
 <div class="right">
-<form method = "GET" name ="form1" action = "/nakao/ResultServlet" >
-<button id="endcount" type = button>退勤</button>
-<input id="hide_ex2" type="hidden" name="EX" value="">
+	<div class = "right2">
+		<form method = "GET" name ="form1" action = "/nakao/ResultServlet" >
+		<button id="endcount" type = button>
+		<img src="/nakao/img/exit.png" width="50%" height="" ><img src="/nakao/img/pic.gif" width="25%"  height="">
+		</button>
+		<input id="hide_ex2" type="hidden" name="EX" value="">
+		</form>
+	</div>
+	<br>
+	<p>　　　　　　　　${Tpoint}</p>
 
-</form>
-<p>Tポイント: ${Tpoint}</p>
-<div class="egg">
-  <div class="eggA">
-    卵の画像<img src="/nakao/img/.jpg" width="" height="">
-  </div>
-<form method = "GET" name = "form2"action = "/nakao/BuyServlet">
-<button id="confirm-demo" type ="button">購入</button>
-<input id="hide_ex3" type="hidden" name="EX" value="">
-</form>
-</div>
+	<div class="egg">
+
+	  <!-- <div class="eggA">
+	    <img src="/nakao/img/4n27x.png" width="30%" height="">
+	  	<img src="/nakao/img/sen.png" width="" height="">
+	  </div> -->
+
+	  <div class="kanb">
+      	<img src="/nakao/img/kanb.png" width="110px" height="">
+      </div>
+
+	  <div class = "eggB">
+		<form method = "GET" name = "form2"action = "/nakao/BuyServlet">
+		<button id="confirm-demo" type ="button"><img src="/nakao/img/68b7p.png" width="80%" height=""></button>
+		<input id="hide_ex3" type="hidden" name="EX" value="">
+		</form>
+	  </div>
+
+	</div>
+
+
 </div>
 
 </body>
-<style>
-#main {
-  display: flex;
-  margin: 0px;
-  width: 100%;
-}
-.left {
-  margin: 20px;
-  width: 20%;
-}
-.center {
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-  width: 60%;
-}
-.right {
-  margin: 20px;
-  width: 20%;
-}
-</style>
 
 <script>
 

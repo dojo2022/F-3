@@ -1,15 +1,101 @@
 @charset "UTF-8";
-  /* 全体 */
+    body{
+      border: 10px  #000000;
+                                /* 余白指定 */
+        background-image: url(/nakao/img/doukutu4.jpg);    /* 背景色指定 */
+        /* 画像を常に天地左右の中央に配置 */
+      background-position: center center;
+      /* 画像をタイル状に繰り返し表示しない */
+      background-repeat: no-repeat;
+      /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+      background-attachment: fixed;
+      /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+      background-size: cover;
+      /* 背景画像が読み込まれる前に表示される背景のカラー */
+      background-color: #464646;
+    }
+    #main {
+      display: flex;
+      margin-top: 20px;
+        height: 627px;
+      width: 98%;
+    }
+    .left {
+                                /* 余白指定 */
+        background-image: url(/nakao/img/makimon.png);    /* 背景色指定 */
+      /* 画像をタイル状に繰り返し表示しない */
+      background-repeat: no-repeat;
+      /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+      /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+      background-size: cover;
+      align-items: center;
+      text-align: center;
+      margin: 10px;
+      width:24%;
+    }
+    .center {
+    border: 5px solid;
+        background-image: url(/nakao/img/haikeikamo.gif);    /* 背景色指定 */
+      /* 画像をタイル状に繰り返し表示しない */
+      background-repeat: no-repeat;
+      /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+      /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+      background-size: cover;
+      align-items: center;
+      text-align: center;
+      margin: 10px;
+      width: 60%;
+    }
+    .right {
+                                 /* 余白指定 */
+        background-image: url(/nakao/img/sign.png);    /* 背景色指定 */
+      /* 画像をタイル状に繰り返し表示しない */
+      background-repeat: no-repeat;
+      /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+      /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+      background-size: cover;
+      align-items: center;
+      text-align: center;
+      margin: 10px;
+      width: 20%;
+    }
 
-  /* 左画面 */
-.left{
+    .kanb{
+        margin-top: 158px;
+        padding-right:80px;
+        margin-right:50px;
+    }
+    .miss1{
+    margin-top: 30px;
+    }
 
-}
-  /* 中画面 */
-.center{
+    #clearbtn1{
+    background-image:url(/nakao/img/tassei.png);
+    width: 100px;
+    height: 40px;
+    }
+    #clearbtn2{
+    background-image:url(/nakao/img/tassei.png);
+    width: 100px;
+    height: 40px;
+    }
+    #clearbtn3{
+    background-image:url(/nakao/img/tassei.png);
+    width: 100px;
+    height: 40px;
+    }
+	.chb{
+    margin-top: 160px;
+    }
+    .right2{
+    margin-top: 15px;
+    }
+    .eggA{
+        margin-bottom: 100px;
+    }
+    .eggB{
+        margin-top: 118px;
+    }
 
-}
-  /* 右画面 */
-.light{
 
-}
+

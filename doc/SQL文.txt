@@ -56,9 +56,16 @@ INSERT INTO CHARACTER (name, Ex_point, file_pass, have_flag) VALUES ('PCくん',
 UPDATE CHARACTER SET file_pass = 'poyopoyokinoko.gif' WHERE char_id = 1;
 
 //mission
-INSERT INTO MISSION (sentence) VALUES ('挨拶');
-INSERT INTO MISSION (sentence) VALUES ('挨拶１');
-INSERT INTO MISSION (sentence) VALUES ('挨拶２');
+INSERT INTO MISSION (sentence) VALUES ('笑顔で挨拶する');
+INSERT INTO MISSION (sentence) VALUES ('進捗を上司に報告する');
+INSERT INTO MISSION (sentence) VALUES ('1時間に1回休憩を取る');
+INSERT INTO MISSION (sentence) VALUES ('定時に帰る');
+INSERT INTO MISSION (sentence) VALUES ('本日のノルマを達成する');
+INSERT INTO MISSION (sentence) VALUES ('3人に挨拶する');
+INSERT INTO MISSION (sentence) VALUES ('バランスのいい昼食を取る');
+INSERT INTO MISSION (sentence) VALUES ('社内の人とコミュニケーションを取る');
+INSERT INTO MISSION (sentence) VALUES ('新しい技術を習得する');
+INSERT INTO MISSION (sentence) VALUES ('メールの返信をする');
 
 //missionclear
 INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶', false);
@@ -71,3 +78,6 @@ mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 sentence VARCHAR(30),
 cleared BOOLEAN
 );
+
+<DROP文>
+DROP TABLE mission;

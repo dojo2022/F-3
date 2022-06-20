@@ -115,6 +115,8 @@ public class UserDao {
 
 	}
 
+	
+	//char_idを取得する
 	public int char_id() {
 
 		List<Integer> char_id = new ArrayList<Integer>();

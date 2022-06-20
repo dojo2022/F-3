@@ -39,7 +39,7 @@ public class MainServlet extends HttpServlet {
 				return;
 			}
 
-			final int loginPoint=3; //ログボでもらえるポイント
+			final int loginPoint=1; //ログボでもらえるポイント
 
 			int nowPoint;
 
@@ -75,6 +75,9 @@ public class MainServlet extends HttpServlet {
 			missionList=mDao.returnMission(); //ミッション三つ これを渡す
 
 	//ここからキャラクター関係の処理
+			if(uDao.char_id() == 0) {
+				uDao.updateChara(1);
+			}
 			int charId=uDao.char_id();
 			Chara growing=cDao.inf(charId);//育成中のキャラクター
 

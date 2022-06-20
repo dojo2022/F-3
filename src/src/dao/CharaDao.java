@@ -27,6 +27,7 @@ public class CharaDao {
 			String sql = "select * from character where char_id = ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			System.out.println("id=" + id);
 			if (id != 0) {
 				pStmt.setInt(1, id);
 			}
@@ -45,6 +46,7 @@ public class CharaDao {
 						(rs.getBoolean("have_flag")));
 				inf.add(a);
 			}
+			System.out.println(inf);
 		nana = inf.get(0);
 		}
 		catch (SQLException e) {

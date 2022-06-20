@@ -13,6 +13,7 @@
 
 
 
+
 <body id="main">
 <!-- 左の画面 -->
 <div class="left">

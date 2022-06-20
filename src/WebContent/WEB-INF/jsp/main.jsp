@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="model.Chara" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +62,7 @@
 
   </div>
   <div class="charaimg">
-    <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
+    <img id= "mainimg" src="/nakao/img/main_image/${growing.getEggimg()}" width="" height="">
   </div>
 </div>
 	<div class="chb">
@@ -147,6 +148,19 @@ function showPassage(pa) {
     	}
     }
 	lv.textContent = levelCount;
+	let img = document.getElementById("mainimg");
+	if(levelCount > 1) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+	}
+	else if(levelCount > 2) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+	}
+	else if(levelCount > 3) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+	}
+	else if(levelCount > 4) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+	}
     console.log(levelCount);
 }
 

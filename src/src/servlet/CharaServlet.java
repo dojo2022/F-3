@@ -46,7 +46,7 @@ public class CharaServlet extends HttpServlet {
 
 	//ここから所持キャラクターを取り出す処理
 			List<Chara> charaList=new ArrayList<Chara>();
-			charaList=cDao.havingChara(); //全てのキャラクターのリスト
+			charaList=cDao.allchara(); //全てのキャラクターのリスト
 			System.out.println(charaList);
 
 	//ここから育成中のキャラクターを取り出す処理

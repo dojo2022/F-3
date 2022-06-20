@@ -85,6 +85,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("Tpoint",nowPoint);
 			request.setAttribute("mission",missionList);
 			request.setAttribute("growing", growing);
+			System.out.println(growing.getEggimg());
 
 
 	//フォワードする

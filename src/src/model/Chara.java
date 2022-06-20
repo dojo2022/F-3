@@ -5,16 +5,22 @@ public class Chara implements Serializable{
 	private int char_id;
 	private String name;
 	private int Ex_point;
-	private String file_pass;
-	private boolean have_flag;
+	private String eggimg;
+	private String charaimg1;
+	private String charaimg2;
+	private String charaimg3;
+	private String charaimg4;
 
-	public Chara(int char_id, String name, int ex_point, String file_pass, boolean have_flag) {
+	public Chara(int char_id, String name, int ex_point, String eggimg, String charaimg1, String charaimg2, String charaimg3, String charaimg4) {
 		super();
 		this.char_id = char_id;
 		this.name = name;
 		Ex_point = ex_point;
-		this.file_pass = file_pass;
-		this.have_flag=have_flag;
+		this.eggimg = eggimg;
+		this.charaimg1 = charaimg1;
+		this.charaimg2 = charaimg2;
+		this.charaimg3 = charaimg3;
+		this.charaimg4 = charaimg4;
 	}
 
 	public Chara() {
@@ -22,8 +28,11 @@ public class Chara implements Serializable{
 		this.char_id = 0;
 		this.name = "";
 		Ex_point = 0;
-		this.file_pass = "";
-		this.have_flag=false;
+		this.eggimg = "";
+		this.charaimg1 = "";
+		this.charaimg2 = "";
+		this.charaimg3 = "";
+		this.charaimg4 = "";
 	}
 
 	public int getChar_id() {
@@ -50,20 +59,44 @@ public class Chara implements Serializable{
 		Ex_point = ex_point;
 	}
 
-	public String getFile_pass() {
-		return file_pass;
+	public String getEggimg() {
+		return eggimg;
 	}
 
-	public void setFile_pass(String file_pass) {
-		this.file_pass = file_pass;
+	public void setEggimg(String eggimg) {
+		this.eggimg = eggimg;
 	}
 
-	public boolean isHave_flag() {
-		return have_flag;
+	public String getCharaimg1() {
+		return charaimg1;
 	}
 
-	public void setHave_flag(boolean have_flag) {
-		this.have_flag = have_flag;
+	public void setCharaimg1(String charaimg1) {
+		this.charaimg1 = charaimg1;
+	}
+
+	public String getCharaimg2() {
+		return charaimg2;
+	}
+
+	public void setCharaimg2(String charaimg2) {
+		this.charaimg2 = charaimg2;
+	}
+
+	public String getCharaimg3() {
+		return charaimg3;
+	}
+
+	public void setCharaimg3(String charaimg3) {
+		this.charaimg3 = charaimg3;
+	}
+
+	public String getCharaimg4() {
+		return charaimg4;
+	}
+
+	public void setCharaimg4(String charaimg4) {
+		this.charaimg4 = charaimg4;
 	}
 
 

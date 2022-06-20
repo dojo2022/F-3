@@ -12,7 +12,6 @@ import model.Chara;
 public class CharaDao {
 
 	public Chara inf(int id) {//現在育成中のキャラクターを取得
-		List<Chara> inf = new ArrayList<Chara>();
 
 		Connection conn = null;
 		Chara nana = null;
@@ -24,7 +23,7 @@ public class CharaDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select * from character where char_id = ? ";
+			String sql = "select * from character left join charadata on character.char_id = charadata.char_id where character.char_id = ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			System.out.println("id=" + id);
@@ -38,16 +37,18 @@ public class CharaDao {
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			while (rs.next()) {
-				Chara a= new Chara(rs.getInt("char_id"),
+			rs.next();
+			Chara a = new Chara(rs.getInt("char_id"),
 						(rs.getString("name")),
 						(rs.getInt("Ex_point")),
-						(rs.getString("file_pass")),
-						(rs.getBoolean("have_flag")));
-				inf.add(a);
-			}
-			System.out.println(inf);
-		nana = inf.get(0);
+						(rs.getString("eggimg")),
+						(rs.getString("charaimg1")),
+						(rs.getString("charaimg2")),
+						(rs.getString("charaimg3")),
+						(rs.getString("charaimg4")));
+
+			System.out.println(a);
+		nana = a;
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -88,70 +89,21 @@ public class CharaDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select * from character";
+			String sql = "select * from character left join charadata on character.char_id = charadata.char_id;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			while (rs.next()) {
-				Chara a= new Chara(rs.getInt("char_id"),
+				Chara a = new Chara(rs.getInt("char_id"),
 						(rs.getString("name")),
-						(rs.getInt("ex_point")),
-						(rs.getString("file_pass")),
-						(rs.getBoolean("have_flag")));
-				inf.add(a);
-			}
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-			inf = null;
-		}
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			inf = null;
-		}
-		finally {
-			// データベースを切断
-			if (conn != null) {
-				try {
-					conn.close();
-				}
-				catch (SQLException e) {
-					e.printStackTrace();
-				 inf = null;
-				}
-			}
-		}
-
-		// 結果を返す
-		return inf;
-	}
-	public List<Chara> havingChara(){//所持キャラクターを取得
-
-		List<Chara> inf = new ArrayList<Chara>();
-
-		Connection conn = null;
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
-
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
-
-			// SELECT文を準備する
-			String sql = "select * from character where have_flag=true";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-
-			// SELECT文を実行し、結果表を取得する
-			ResultSet rs = pStmt.executeQuery();
-
-			while (rs.next()) {
-				Chara a= new Chara(rs.getInt("char_id"),
-						(rs.getString("name")),
-						(rs.getInt("ex_point")),
-						(rs.getString("file_pass")),
-						(rs.getBoolean("have_flag")));
+						(rs.getInt("Ex_point")),
+						(rs.getString("eggimg")),
+						(rs.getString("charaimg1")),
+						(rs.getString("charaimg2")),
+						(rs.getString("charaimg3")),
+						(rs.getString("charaimg4")));
 				inf.add(a);
 			}
 		}

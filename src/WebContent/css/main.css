@@ -85,7 +85,7 @@
     height: 40px;
     }
 	.chb{
-    margin-top: 160px;
+    margin-top: 414px;
     }
     .right2{
     margin-top: 15px;
@@ -94,8 +94,34 @@
         margin-bottom: 100px;
     }
     .eggB{
-        margin-top: 118px;
+        margin-top: 105px;
     }
 
+	button {
+	  border: none;
+	  outline: none;
+	  background: transparent;
+	}
 
+	.mission_c{
+		margin-left: 65px;
+		width: 10em;
+	}
 
+	.info{
+		font-size: 40px;
+		font-weight: 700;
+		font-family: Impact,Charcoal;
+	}
+
+	#tpoint{
+		font-family: Impact,Charcoal;
+		color: #FFFFFF;
+		margin-top: 4px;
+	}
+
+	.charaimg{
+		position:  absolute;
+		right: 608px;
+		top: 355px;
+	}

@@ -51,16 +51,12 @@
 <div class="chara" >
   <div class="sute">
   <br>
+  	<div class = "info">
 		<img src="/nakao/img/Lv.png" width="10%" ><span id = "Level"></span>
-		<img src="/nakao/img/Lv.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span>
+		<img src="/nakao/img/Ex.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span>
 		<img src="/nakao/img/No.png" width="10%" ><span> ${growing.getName()}</span>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+	</div>
+
   </div>
   <div class="charaimg">
     <img src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
@@ -90,7 +86,8 @@
 		</form>
 	</div>
 	<br>
-	<p>　　　　　　　　${Tpoint}</p>
+	<br>
+	<p id = "tpoint">　　　　　　　　　　　　${Tpoint}</p>
 
 	<div class="egg">
 

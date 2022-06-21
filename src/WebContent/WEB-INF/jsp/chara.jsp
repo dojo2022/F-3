@@ -37,11 +37,28 @@
 		 	Name:<span><c:out value = "${e.name}"/></span>
 		 	<span class = "PassageArea"><c:out value = "${e.ex_point}"/></span>
 		</div>
-<%
-String test = (String)pageContext.findAttribute("e.ex_point");
-//System.out.println(test);
-%>
-		<img class="charaimage" src="/nakao/img/main_image/${e.eggimg}"> <!-- onclick="clickimg()" -->
+		<c:set var="ex_point">${e.ex_point}</c:set>
+		<c:set var="lv">
+		<%
+			String str = (String)pageContext.getAttribute("ex_point");
+			int exp = Integer.parseInt(str);
+
+			int levelCount = 0;
+			while(exp > 0)
+			{
+				exp = exp - (100 + (5 * levelCount));
+			    levelCount = levelCount + 1;
+			}
+System.out.println("level = " + levelCount);
+			out.print(levelCount);
+		%>
+		</c:set>
+		<c:if test="${lv >= 0 && lv <= 1}"><img class="charaimage" src="/nakao/img/main_image/${e.eggimg}"></c:if>
+		<c:if test="${lv > 1 && lv <= 2}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg1}"></c:if>
+		<c:if test="${lv > 2 && lv <= 3}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg2}"></c:if>
+		<c:if test="${lv > 3 && lv <= 4}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg3}"></c:if>
+		<c:if test="${lv > 4}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg4}"></c:if>
+
 		<button>変更</button>
 		<input name="char_id" type="hidden" value="${e.char_id}">
 	</form>
@@ -106,7 +123,7 @@ if(levelCount > 3) {
 if(levelCount > 4) {
 	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
 }
-console.log(levelCount);
+console.log("level = " + levelCount);
 </script>
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/chara.js"></script>

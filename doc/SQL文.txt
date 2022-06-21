@@ -30,9 +30,6 @@ char_id int PRIMARY KEY NOT NULL,
 Ex_point int
 );
 
-<カラム追加>
-ALTER TABLE character ADD have_flag BOOLEAN NOT NULL;
-
 //date
 ALTER TABLE date DROP datetime;
 ALTER TABLE date ADD datetime varchar(20);

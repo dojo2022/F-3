@@ -1,1 +1,58 @@
 @charset "UTF-8";
+.b{
+	 text-align: center;
+	 font-size:72px;
+}
+a.btn-solid-gold {
+  color: #B1921B;
+  border-right: 4px solid #CEA82C;
+  border-bottom: 10px solid #987C1E;
+  border-left: 4px solid #FFED8B;
+  border-radius: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#FFD75B), color-stop(30%, #FFF5A0), color-stop(40%, #FFFABE), color-stop(50%, #FFFFDB), color-stop(70%, #FFF5A0), to(#FDD456));
+  background: -webkit-linear-gradient(right, #FFD75B 0%, #FFF5A0 30%, #FFFABE 40%, #FFFFDB 50%, #FFF5A0 70%, #FDD456 100%);
+  background: linear-gradient(-90deg, #FFD75B 0%, #FFF5A0 30%, #FFFABE 40%, #FFFFDB 50%, #FFF5A0 70%, #FDD456 100%);
+  text-shadow: -1px -1px 1px #FFFFD9;
+}
+a.btn-solid-gold:hover {
+  margin-top: 5px;
+  color: #B1921B;
+  border-right: 4px solid #CEA82C;
+  border-bottom: 7px solid #987C1E;
+  border-left: 4px solid #FFED8B;
+}
+body{
+                            /* 余白指定 */
+    background-image: url(/nakao/img/bg1.gif);    /* 背景色指定 */
+    /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+}
+.koma{
+margin-top: 20px;
+margin-left: 0px;
+margin-right: 0px;
+}
+.yoko{
+	display: flex;
+}
+.sa{
+		 text-align: center;
+	display: flex;
+}
+.cen{
+	  margin-top: 180px;
+	  text-align: center;
+}
+.ken{
+	  margin-top: 180px;
+	  text-align: center;
+	   transform: scale(-1,1);
+}

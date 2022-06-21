@@ -1,7 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>main画面</title>
+<!-- <link rel="stylesheet" type="text/css" href="/simpleBC/WebContent/css/loge.css"> -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<script src="/nakao/javascript/common.js"></script>
+<script src="/nakao/javascript/main.js"></script>
+</head>
 <head>
 <meta charset="UTF-8">
 <title>卵購入</title>
@@ -9,25 +17,40 @@
 <link rel="stylesheet" type="text/css" href="/nakao/css/buy.css">
 </head>
 <body>
-
-	<div>
-		<button id = "gachabtn" onclick="change()">引く</button>
-	</div>
-
-
+<div class = "yoko">
+	<div class="cen">
+    <img src="/nakao/img/dansu.gif" width="70%" height="" >
+    </div>
+    <div class = "koma">
 	<!-- アニメーション -->
-	<video id = "video" src="/nakao/img/sample.mp4" width="300" height="300" onended="finish()"></video>
-
-
+	<video id = "video" src="/nakao/img/notloop.mp4" width="900" height="" onended="finish()"></video>
+    </div>
+    <div class="ken">
+    <img src="/nakao/img/dansu.gif" width="70%" height="" >
+    </div>
+</div>
+<div class="sa">
+		<div class="b">
+		　　　　　　　<a id = "gachabtn" onclick="change()" class="btn btn-solid-gold">　PUSH!　</a>　　　　　
+	</div>
 	<div class = "backbtn">
-		<a href="/nakao/MainServlet">
-			<input type="button" value="戻る" id = "backbtn1" disabled>
+	 	<a  href="/nakao/MainServlet">
+		<br>
+<br>
+<input type="button" value="戻る" id = "backbtn1" disabled>
 		</a>
 	</div>
-
-
+</div>
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/buy.js"></script>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+

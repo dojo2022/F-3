@@ -124,6 +124,8 @@ let ex1 = document.getElementById('hide_ex1');
 let ex2 = document.getElementById('hide_ex2');
 let ex3 = document.getElementById('hide_ex3');
 let lv = document.getElementById('Level');
+let tp = document.getElementById('tpoint');
+let tpoint = parseInt(tp.textContent.trim());
 
 
 function showPassage(pa) {
@@ -289,19 +291,34 @@ function check3(){
 }
 
 document.getElementById("confirm-demo").onclick = function(){
-    var options = {
-        text: '卵を購入しますか？',
-        buttons: {
-            cancel: 'キャンセル',
-            ok: '購入する'
-        }
-    };
-    swal(options).then(function(value){
-            if(value){
-                document.form2.submit();
-            }
-        });
-    };
+	if(tpoint >= 5)
+	{
+	    var options = {
+	        text: '卵を購入しますか？',
+	        buttons: {
+	            cancel: 'キャンセル',
+	            ok: '購入する'
+	        }
+	    };
+	    swal(options).then(function(value){
+	        if(value){
+	            document.form2.submit();
+	        }
+	    });
+	}
+	else
+	{
+		var options = {
+		        text: 'Tポイントが足りません',
+		        buttons: {
+		            ok: '戻る'
+		        }
+		};
+		swal(options).then(function(value){
+		        console.log("Tポイントが足りません")
+		});
+	}
+}
 
 document.getElementById("endcount").onclick = function(){
     var options = {

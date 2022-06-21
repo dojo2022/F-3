@@ -16,7 +16,9 @@
 
 	<!-- 日付と時間を取得 -->
 	<div class="charaimage">
-		<img src="/nakao/img/result_image/${resultChara.getFile_pass()}" width="" height="">
+		<img src="/nakao/img/main_image/${resultChara.getEggimg()}" width="" height="">
+		<img src="/nakao/img/main_image/${resultChara.getCharaimg1()}" width="" height="">
+		<img src="/nakao/img/main_image/${resultChara.getCharaimg2()}" width="" height="">
 	</div>
 
 	<!-- 画面を閉じる -->

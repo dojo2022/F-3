@@ -122,7 +122,9 @@
 
 	.charaimg{
 		position:  absolute;
-		right: 608px;
+		position: absolute;
 		bottom: 170px;
+	    left: 51%;
+	    -webkit-transform: translateX(-50%);
 	}
 

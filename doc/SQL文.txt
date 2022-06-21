@@ -45,9 +45,9 @@ INSERT INTO DATE (datetime) VALUES ('2022-06-09');
 
 //chara
 INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
-VALUES ('ぽよぽよキノコ', 'tama.png', 'poyopoyokinoko.gif', 'kinokochan1.gif', 'kinokochan2.gif', 'kinokochan3.gif', true);
+VALUES ('ぽよぽよキノコ', 'rainbowegg.gif', 'poyopoyokinoko.gif', 'kinokochan1.gif', 'kinokochan2.gif', 'kinokochan3.gif', true);
 INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
-VALUES ('PCくん', 'tama.png', 'pc.gif', 'pc1.gif', 'pc2.gif', 'pc3.gif', false);
+VALUES ('PCくん', 'rainbowegg.gif', 'pc.gif', 'pc1.gif', 'pc2.gif', 'pc3.gif', false);
 
 
 //chara

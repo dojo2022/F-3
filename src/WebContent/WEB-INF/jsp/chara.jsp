@@ -24,7 +24,7 @@
 		 	<span id = "mainPassageArea">${growing.getEx_point()}</span>
 		</div>
 		<div class="imgchange">
-		   <img id="mainchara" src="/nakao/img/main_image/${growing.getFile_pass()}" width="" height="">
+		   <img id="mainchara" src="/nakao/img/main_image/${growing.getEggimg()}" width="" height="">
 		</div>
 	</div>
 
@@ -37,7 +37,11 @@
 		 	Name:<span><c:out value = "${e.name}"/></span>
 		 	<span class = "PassageArea"><c:out value = "${e.ex_point}"/></span>
 		</div>
-		<img class="charaImage" src="/nakao/img/main_image/${e.file_pass}"> <!-- onclick="clickimg()" -->
+<%
+String test = (String)pageContext.findAttribute("e.ex_point");
+//System.out.println(test);
+%>
+		<img class="charaimage" src="/nakao/img/main_image/${e.eggimg}"> <!-- onclick="clickimg()" -->
 		<button>変更</button>
 		<input name="char_id" type="hidden" value="${e.char_id}">
 	</form>
@@ -48,6 +52,7 @@
 <script>
 let charpa = document.getElementsByClassName("PassageArea");
 let charlv = document.getElementsByClassName('Level');
+let charimg = document.getElementsByClassName('charaimage');
 let length = charpa.length;
 
 for(let i = 0; i < length; i++) {
@@ -68,6 +73,8 @@ for(let i = 0; i < length; i++) {
 	charlv[i].textContent = levelCount;
 }
 
+
+
 let pa = document.getElementById("mainPassageArea");
 let lv = document.getElementById('mainLevel');
 let exp = parseInt(pa.textContent);
@@ -86,6 +93,19 @@ while(exp > 0)
 	}
 }
 lv.textContent = levelCount;
+let img = document.getElementById("mainchara");
+if(levelCount > 1) {
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+}
+if(levelCount > 2) {
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+}
+if(levelCount > 3) {
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+}
+if(levelCount > 4) {
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+}
 console.log(levelCount);
 </script>
 <script src="/nakao/javascript/common.js"></script>

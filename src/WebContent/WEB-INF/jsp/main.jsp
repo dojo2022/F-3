@@ -152,19 +152,49 @@ function showPassage(pa) {
 	if(levelCount > 1) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
 	}
-	else if(levelCount > 2) {
+	if(levelCount > 2) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
 	}
-	else if(levelCount > 3) {
+	if(levelCount > 3) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
 	}
-	else if(levelCount > 4) {
+	if(levelCount > 4) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
 	}
     console.log(levelCount);
 }
 
 window.onload = function() {
+    let exp = parseInt(pa.textContent);
+    let levelCount = 0;
+
+    while(exp > 0)
+    {
+    	if(exp < 0)
+    	{
+    		break;
+    	}
+    	else
+    	{
+    		exp = exp - (100 + (5 * levelCount));
+        	levelCount = levelCount + 1;
+    	}
+    }
+	lv.textContent = levelCount;
+	let img = document.getElementById("mainimg");
+	if(levelCount > 1) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+	}
+	if(levelCount > 2) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+	}
+	if(levelCount > 3) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+	}
+	if(levelCount > 4) {
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+	}
+
     PassageID = setInterval('showPassage(pa)',1000);
 
     let cleared1 = document.getElementById("cleared1");

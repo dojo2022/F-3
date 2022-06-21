@@ -44,26 +44,19 @@ public class BuyServlet extends HttpServlet {
 			}
 			cDao.updateExp(exp,uDao.char_id()); //経験値を保存
 
-	/*if(request.getParameter("SUBMIT").equals("戻る")){ //submitじゃなくなるかも
-		response.sendRedirect("/nakao/MainServlet");
-		return;
-	} やっぱり保留！！ */
+			//Tポイントを減らす
+			System.out.println(uDao.updateTpoint(-5));
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buy.jsp");
-			dispatcher.forward(request, response);
+			//卵を追加する
+			if(cDao.insertChara())
+			{
+				System.out.println("購入成功");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buy.jsp");
+				dispatcher.forward(request, response);
+			}
+			else
+			{
+				System.out.println("購入失敗");
+			}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("user") == null) {
-			response.sendRedirect("/nakao/LoginServlet");
-			return;
-		}
-保留*/
-	//}
-
 }

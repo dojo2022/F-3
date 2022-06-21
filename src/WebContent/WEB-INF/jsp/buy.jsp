@@ -31,13 +31,11 @@
 </div>
 <div class="sa">
 		<div class="b">
-		　　　　　　　<a id = "gachabtn" onclick="change()" class="btn btn-solid-gold">　PUSH!　</a>　　　　　
+		<a id = "gachabtn" onclick="change()" class="btn btn-solid-gold">　PUSH!　</a>
 	</div>
 	<div class = "backbtn">
 	 	<a  href="/nakao/MainServlet">
-		<br>
-<br>
-<input type="button" value="戻る" id = "backbtn1" disabled>
+		<input type="button" value="戻る" id = "backbtn1" disabled>
 		</a>
 	</div>
 </div>

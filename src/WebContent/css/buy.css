@@ -13,6 +13,7 @@ a.btn-solid-gold {
   background: -webkit-linear-gradient(right, #FFD75B 0%, #FFF5A0 30%, #FFFABE 40%, #FFFFDB 50%, #FFF5A0 70%, #FDD456 100%);
   background: linear-gradient(-90deg, #FFD75B 0%, #FFF5A0 30%, #FFFABE 40%, #FFFFDB 50%, #FFF5A0 70%, #FDD456 100%);
   text-shadow: -1px -1px 1px #FFFFD9;
+  margin-left: 500px;
 }
 a.btn-solid-gold:hover {
   margin-top: 5px;
@@ -55,4 +56,8 @@ margin-right: 0px;
 	  margin-top: 180px;
 	  text-align: center;
 	   transform: scale(-1,1);
+}
+#backbtn1{
+	margin-top: 30px;
+	margin-left: 300px;
 }

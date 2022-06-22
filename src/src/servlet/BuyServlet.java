@@ -44,19 +44,23 @@ public class BuyServlet extends HttpServlet {
 			}
 			cDao.updateExp(exp,uDao.char_id()); //経験値を保存
 
-			//Tポイントを減らす
-			System.out.println(uDao.updateTpoint(-5));
-
 			//卵を追加する
 			if(cDao.insertChara())
 			{
 				System.out.println("購入成功");
+
+				//Tポイントを減らす
+				System.out.println(uDao.updateTpoint(-5));
+
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buy.jsp");
 				dispatcher.forward(request, response);
 			}
 			else
 			{
+				request.setAttribute("cant_buy", false);
 				System.out.println("購入失敗");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/buy.jsp");
+				dispatcher.forward(request, response);
 			}
 	}
 }

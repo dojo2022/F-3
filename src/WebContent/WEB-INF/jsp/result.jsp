@@ -9,21 +9,31 @@
 <link rel="stylesheet" type="text/css" href="/nakao/css/result.css">
 <script src="/nakao/javascript/common.js"></script>
 </head>
-<body>
 
-	<p>退勤しました。<br>
-	本日も一日お疲れ様でした。</p>
+<body id="main">
 
-	<!-- 日付と時間を取得 -->
-	<div class="charaimage">
-		<img src="/nakao/img/main_image/${resultChara.getEggimg()}" width="" height="">
-		<img src="/nakao/img/main_image/${resultChara.getCharaimg1()}" width="" height="">
-		<img src="/nakao/img/main_image/${resultChara.getCharaimg2()}" width="" height="">
+	<div class="den">
+	    <img src="/nakao/img/main_image/${resultChara.getEggimg()}" width="" height="">
 	</div>
+
+	<div class="cen">
+	    <img src="/nakao/img/main_image/${resultChara.getCharaimg1()}" width="" height="">
+	</div>
+
+
+
+	  <div class="blackboard-box">
+	  	<br>
+	    <p>退勤しました。</p>
+	    <p>本日も一日お疲れ様でした。</p>
+		<br>
+	    <div class="chalk1"></div>
+	    <div class="chalk2"></div>
+	  </div>
 
 	<!-- 画面を閉じる -->
 	<form method="POST" action="/nakao/ResultServlet">
-		<button>OK</button>
+		<button class="ok"><img src="/nakao/img/okbtn.png" width="140px" height="40px" ></button>
 	</form>
 </body>
 </html>

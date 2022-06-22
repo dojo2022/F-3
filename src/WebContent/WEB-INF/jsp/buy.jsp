@@ -4,11 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>main画面</title>
-<!-- <link rel="stylesheet" type="text/css" href="/simpleBC/WebContent/css/loge.css"> -->
-<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-<script src="/nakao/javascript/common.js"></script>
-<script src="/nakao/javascript/main.js"></script>
+<title>購入画面</title>
+
 </head>
 <head>
 <meta charset="UTF-8">
@@ -23,7 +20,7 @@
     </div>
     <div class = "koma">
 	<!-- アニメーション -->
-	<video id = "video" src="/nakao/img/notloop.mp4" width="900" height="" onended="finish()"></video>
+	<video  id = "video" src="/nakao/img/notloop.mp4" width="900" height="" onended="finish()"></video>
     </div>
     <div class="ken">
     <img src="/nakao/img/dansu.gif" width="70%" height="" >
@@ -31,19 +28,25 @@
 </div>
 <div class="sa">
 		<div class="b">
-		<a id = "gachabtn" onclick="change()" class="btn btn-solid-gold">　PUSH!　</a>
+		<img src="/nakao/img/r9.gif" width="10%" height="" >
+		<img src="/nakao/img/r9.gif" width="10%" height="" >
+		<img id = "btn1" src="/nakao/img/eggg.gif" width="100" height="100">
+		<img src="/nakao/img/r9.gif" width="10%" height="" >
+		<img src="/nakao/img/r9.gif" width="10%" height="" >
 	</div>
 	<div class = "backbtn">
 		<form name="form" method="GET" action="/nakao/MainServlet">
 	 	<input type="hidden" value="${cant_buy}" id = "cant_buy">
-		<input type="button" value="戻る" id = "backbtn1" disabled>
+		<a href = /nakao/MainServlet><button type="button" id="backbtn1"><img src="/nakao/img/sa.png" width="60px" height="60px"></button></a>
+
+
 		</form>
 	</div>
 </div>
-<script src="/nakao/javascript/common.js"></script>
-<script src="/nakao/javascript/buy.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
 <script>
+
 let cb = document.getElementById("cant_buy");
 console.log("cb = " + cb.value);
 
@@ -60,8 +63,28 @@ window.onload = function() {
 	        document.form.submit();
 	    });
 	}
-}
+};
+
 </script>
+
+
+	<script>
+		let egg = document.getElementById("btn1");
+		let v = document.getElementById('video');
+
+		function eggPush(){
+		  v.play();
+		  let dbtn = document.getElementById("gchabtn")
+		  dbtn.disabled = true;
+		}
+		egg.addEventListener("click",eggPush,false);
+
+		function finish(){
+			let back = document.getElementById("backbtn1")
+		  back.disabled = false;
+		}
+
+	</script>
 </body>
 </html>
 

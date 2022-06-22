@@ -2,6 +2,9 @@
 .b{
 	 text-align: center;
 	 font-size:72px;
+	 position: absolute;
+    bottom: -28px;
+    left: 95px;
 }
 a.btn-solid-gold {
   color: #B1921B;
@@ -57,7 +60,11 @@ margin-right: 0px;
 	  text-align: center;
 	   transform: scale(-1,1);
 }
+#btn1{
+
+}
+
 #backbtn1{
-	margin-top: 30px;
-	margin-left: 300px;
+	margin-top: 20px;
+    margin-left: 1200px;
 }

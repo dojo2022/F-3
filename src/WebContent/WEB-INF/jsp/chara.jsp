@@ -24,7 +24,7 @@
 		 	<span id = "mainPassageArea">${growing.getEx_point()}</span>
 		</div>
 		<div class="imgchange">
-		   <img id="mainchara" src="/nakao/img/main_image/${growing.getEggimg()}" width="" height="">
+		   <img id="mainchara" src="/nakao/img/main_image/${growing.getEggimg()}.gif" width="" height="">
 		</div>
 	</div>
 
@@ -53,11 +53,11 @@ System.out.println("level = " + levelCount);
 			out.print(levelCount);
 		%>
 		</c:set>
-		<c:if test="${lv >= 0 && lv <= 1}"><img class="charaimage" src="/nakao/img/main_image/${e.eggimg}"></c:if>
-		<c:if test="${lv > 1 && lv <= 2}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg1}"></c:if>
-		<c:if test="${lv > 2 && lv <= 3}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg2}"></c:if>
-		<c:if test="${lv > 3 && lv <= 4}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg3}"></c:if>
-		<c:if test="${lv > 4}"><img class="charaimage" src="/nakao/img/main_image/${e.charaimg4}"></c:if>
+		<c:if test="${lv >= 0 && lv <= 1}"><img class="charaimage" src="/nakao/img/chara_image/${e.eggimg}.png"></c:if>
+		<c:if test="${lv > 1 && lv <= 2}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg1}.png"></c:if>
+		<c:if test="${lv > 2 && lv <= 3}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg2}.png"></c:if>
+		<c:if test="${lv > 3 && lv <= 4}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg3}.png"></c:if>
+		<c:if test="${lv > 4}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg4}.png"></c:if>
 
 		<button>変更</button>
 		<input name="char_id" type="hidden" value="${e.char_id}">
@@ -112,16 +112,16 @@ while(exp > 0)
 lv.textContent = levelCount;
 let img = document.getElementById("mainchara");
 if(levelCount > 1) {
-	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
 }
 if(levelCount > 2) {
-	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
 }
 if(levelCount > 3) {
-	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
 }
 if(levelCount > 4) {
-	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+	img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
 }
 console.log("level = " + levelCount);
 </script>

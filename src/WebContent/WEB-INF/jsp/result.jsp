@@ -13,11 +13,11 @@
 <body id="main">
 
 	<div class="den">
-	    <img src="/nakao/img/main_image/${resultChara.getEggimg()}" width="" height="">
+	    <img src="/nakao/img/main_image/${resultChara.getEggimg()}.gif" width="" height="">
 	</div>
 
 	<div class="cen">
-	    <img src="/nakao/img/main_image/${resultChara.getCharaimg1()}" width="" height="">
+	    <img src="/nakao/img/main_image/${resultChara.getCharaimg1()}.gif" width="" height="">
 	</div>
 
 

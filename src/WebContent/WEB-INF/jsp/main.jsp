@@ -62,7 +62,7 @@
 
   </div>
   <div class="charaimg">
-    <img id= "mainimg" src="/nakao/img/main_image/${growing.getEggimg()}" width="" height="">
+    <img id= "mainimg" src="/nakao/img/main_image/${growing.getEggimg()}.gif" width="" height="">
   </div>
 </div>
 	<div class="chb">
@@ -152,16 +152,16 @@ function showPassage(pa) {
 	lv.textContent = levelCount;
 	let img = document.getElementById("mainimg");
 	if(levelCount > 1) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
 	}
 	if(levelCount > 2) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
 	}
 	if(levelCount > 3) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
 	}
 	if(levelCount > 4) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
 	}
     console.log(levelCount);
 }
@@ -185,16 +185,16 @@ window.onload = function() {
 	lv.textContent = levelCount;
 	let img = document.getElementById("mainimg");
 	if(levelCount > 1) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
 	}
 	if(levelCount > 2) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
 	}
 	if(levelCount > 3) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
 	}
 	if(levelCount > 4) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}';
+		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
 	}
 
     PassageID = setInterval('showPassage(pa)',1000);

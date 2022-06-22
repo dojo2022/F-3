@@ -221,17 +221,20 @@ public class CharaDao {
 			String insert_sql = "insert into character (char_id, ex_point) values (?, 0)";
 			pStmt = conn.prepareStatement(insert_sql);
 
-			pStmt.setInt(1, inf.get(0).getChar_id());
-
-			if (pStmt.executeUpdate() == 1) {
-				//追加したキャラのhave_flagをtrueにする
-				String update_sql = "update charadata set have_flag = true where char_id = ?";
-				pStmt = conn.prepareStatement(update_sql);
-
+			if(!inf.isEmpty())
+			{
 				pStmt.setInt(1, inf.get(0).getChar_id());
-				if(pStmt.executeUpdate() == 1)
-				{
-					nana=true;
+
+				if (pStmt.executeUpdate() == 1) {
+					//追加したキャラのhave_flagをtrueにする
+					String update_sql = "update charadata set have_flag = true where char_id = ?";
+					pStmt = conn.prepareStatement(update_sql);
+
+					pStmt.setInt(1, inf.get(0).getChar_id());
+					if(pStmt.executeUpdate() == 1)
+					{
+						nana=true;
+					}
 				}
 			}
 		}

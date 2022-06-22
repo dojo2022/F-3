@@ -34,13 +34,34 @@
 		<a id = "gachabtn" onclick="change()" class="btn btn-solid-gold">　PUSH!　</a>
 	</div>
 	<div class = "backbtn">
-	 	<a  href="/nakao/MainServlet">
+		<form name="form" method="GET" action="/nakao/MainServlet">
+	 	<input type="hidden" value="${cant_buy}" id = "cant_buy">
 		<input type="button" value="戻る" id = "backbtn1" disabled>
-		</a>
+		</form>
 	</div>
 </div>
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/buy.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script>
+let cb = document.getElementById("cant_buy");
+console.log("cb = " + cb.value);
+
+window.onload = function() {
+	if(cb.value == "false")
+	{
+	    var options = {
+	        text: '購入できるキャラがいません',
+	        buttons: {
+	            ok: '戻る'
+	        }
+	    };
+	    swal(options).then(function(value){
+	        document.form.submit();
+	    });
+	}
+}
+</script>
 </body>
 </html>
 

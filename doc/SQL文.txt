@@ -7,7 +7,7 @@ jdbc:h2:file:C:/dojo_data/F3
 【ユーザー名】	【パスワード】
 sa		（なし）
 
-<CREATE文>
+【SQL】//以下のものをコピペで実行
 CREATE TABLE USER (
 user_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 user_name varchar(20) not null,
@@ -48,7 +48,6 @@ charaimg4 VARCHAR(50),
 have_flag BOOLEAN NOT NULL
 );
 
-<INSERT文>
 INSERT INTO USER (user_name, user_pass, point, char_id) VALUES ('webf3', '1234', 20, 1);
 INSERT INTO DATE (datetime) VALUES ('2022-06-01');
 

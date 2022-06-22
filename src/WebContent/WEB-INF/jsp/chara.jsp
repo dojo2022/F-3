@@ -11,32 +11,44 @@
 </head>
 <body>
 <!-- 選択中のキャラ -->
- 	<div class = "backbtn">
+
+<div class = "backbtn">
 	<form method = "POST" action = "/nakao/CharaServlet">
 	<button name="SUBMIT" value="0">戻る</button>
  	</form>
  	</div>
 
-	<div class = "charabox">
-	 	<div class = "sutechange">
+<div id="main">
+  <div class="left"> <!-- 選択中のキャラ(左の画面) -->
+    <div class = "backbtn">
+    <form method = "POST" action = "/nakao/CharaServlet">
+    <button name="SUBMIT" value="0"><img src="images/tassei.png" ></button>
+    </form>
+    </div>
+    <div class = "charabox">
+      <div class = "sutechange">
 	 		Lv:<span id = "mainLevel"></span>
 		 	Name:<span>${growing.getName()}</span>
 		 	Ex:<span id = "mainPassageArea">${growing.getEx_point()}</span>
 		</div>
-		<div class="imgchange">
-		   <img id="mainchara" src="/nakao/img/main_image/${growing.getEggimg()}.gif" width="" height="">
-		</div>
-	</div>
+      <div class="imgchange">
+        <img id="mainchara" src="/nakao/img/main_image/${growing.getEggimg()}.gif" width="" height="">
+      </div>
+    </div>
+  </div>
+  <div class="right"><!--右の画面-->
+    <h1>キャラ一覧</h1>
+<div class="action">
 
-	<h1>キャラ一覧</h1>
-	<div class = "subbox">
-	<c:forEach var = "e" items = "${charaList}">
+    <c:forEach var = "e" items = "${charaList}">
+    <div class="formdayo">
+
 	<form name = "charafrom" method = "GET" action="/nakao/ChangeCharaServlet">
+
 		<div class = "sutechange">
 		 	Lv:<span class = "Level"></span>
 		 	Name:<span><c:out value = "${e.name}"/></span>
 		 	Ex:<span class = "PassageArea"><c:out value = "${e.ex_point}"/></span>
-		</div>
 		<c:set var="ex_point">${e.ex_point}</c:set>
 		<c:set var="lv">
 		<%
@@ -58,11 +70,25 @@ System.out.println("level = " + levelCount);
 		<c:if test="${lv > 2 && lv <= 3}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg2}.png"></c:if>
 		<c:if test="${lv > 3 && lv <= 4}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg3}.png"></c:if>
 		<c:if test="${lv > 4}"><img class="charaimage" src="/nakao/img/chara_image/${e.charaimg4}.png"></c:if>
+		</div>
 
-		<button>変更</button>
-		<input name="char_id" type="hidden" value="${e.char_id}">
+		<div class="changeBtn">
+			<button>変更</button>
+			<input name="char_id" type="hidden" value="${e.char_id}">
+		</div>
+
 	</form>
+	</div>
 	</c:forEach>
+  </div>
+
+</div>
+</div>
+
+
+
+	<div class = "subbox">
+
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

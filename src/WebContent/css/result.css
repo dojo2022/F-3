@@ -1,1 +1,64 @@
 @charset "UTF-8";
+.den{
+	 position:  absolute;
+	 top: 40%;
+	 left:  90px;
+}
+.cen{
+ 	 position:  absolute;
+	 top: 40%;
+	 right:  90px;
+}
+body{
+ 	  text-align: center;
+  color: #FFFFFF;
+  border: 10px  #000000;
+                            /* 余白指定 */
+    background-image: url(/nakao/img/taikin.jpg);    /* 背景色指定 */
+    /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+}
+.blackboard-box{
+  background: #104300;
+  margin: 1em 0;
+  margin-top: 240px;
+  margin-left: 300px;
+margin-right: 300px;
+  padding: 1em 1em 0 1em;
+  border: 8px solid #a60;
+  box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
+}
+.blackboard-box p{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-shadow: 0px 0px 2px #fff;
+}
+.chalk1{
+  display: block;
+  margin-top: 10px;
+  margin-left: 90%;
+  border: solid 3px #fff;
+  width: 15px;
+  height: 6px;
+  border-radius: 3px 2px 0 2px;
+}
+.chalk2{
+  display: block;
+  margin-top: -6px;
+  margin-left: calc(90% - 30px);
+  border: solid 3px #FFEE58;
+  width: 20px;
+  height: 6px;
+  border-radius: 3px 2px 0 2px;
+}
+.ok{
+	margin-top:40px;
+}

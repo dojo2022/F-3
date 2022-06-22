@@ -3,13 +3,15 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 	private int user_id;
+	private String user_name;
 	private String user_pass;
 	private int point;
 	private int char_id;
 
-	public User(int user_id, String user_pass, int point, int char_id) {
+	public User(int user_id, String user_name, String user_pass, int point, int char_id) {
 		super();
 		this.user_id = user_id;
+		this.user_name = user_name;
 		this.user_pass = user_pass;
 		this.point = point;
 		this.char_id = char_id;
@@ -18,6 +20,7 @@ public class User implements Serializable{
 	public User() {
 		super();
 		this.user_id = 0;
+		this.user_name = "";
 		this.user_pass = "";
 		this.point = 0;
 		this.char_id = 0;
@@ -29,6 +32,14 @@ public class User implements Serializable{
 
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getUser_pass() {

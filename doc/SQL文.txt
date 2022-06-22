@@ -10,6 +10,7 @@ sa		（なし）
 <CREATE文>
 CREATE TABLE USER (
 user_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+user_name varchar(20) not null,
 user_pass VARCHAR(20) NOT NULL,
 point int,
 char_id int
@@ -17,7 +18,7 @@ char_id int
 
 CREATE TABLE DATE (
 date_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-datetime date
+datetime varchar(20)
 );
 
 CREATE TABLE MISSION (
@@ -25,32 +26,43 @@ mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 sentence VARCHAR(30)
 );
 
+CREATE TABLE MISSIONCLEAR (
+mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+sentence VARCHAR(30),
+cleared BOOLEAN
+);
+
 CREATE TABLE CHARACTER (
 char_id int PRIMARY KEY NOT NULL,
 Ex_point int
 );
 
-//date
-ALTER TABLE date DROP datetime;
-ALTER TABLE date ADD datetime varchar(20);
-UPDATE date SET datetime = '2022/06/12' WHERE date_id = 1;
-
+CREATE TABLE charadata (
+char_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+name VARCHAR(20),
+eggimg VARCHAR(50),
+charaimg1 VARCHAR(50),
+charaimg2 VARCHAR(50),
+charaimg3 VARCHAR(50),
+charaimg4 VARCHAR(50),
+have_flag BOOLEAN NOT NULL
+);
 
 <INSERT文>
-INSERT INTO USER (user_pass, point, char_id) VALUES ('F3', 0, 1);
-INSERT INTO DATE (datetime) VALUES ('2022-06-09');
+INSERT INTO USER (user_name, user_pass, point, char_id) VALUES ('webf3', '1234', 20, 1);
+INSERT INTO DATE (datetime) VALUES ('2022-06-01');
 
-//chara
 INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
-VALUES ('ぽよぽよキノコ', 'rainbowegg.gif', 'poyopoyokinoko.gif', 'kinokochan1.gif', 'kinokochan2.gif', 'kinokochan3.gif', true);
+VALUES ('ぽよぽよキノコ', 'rainbowegg', 'poyopoyokinoko', 'kinokochan1', 'kinokochan2', 'kinokochan3', true);
 INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
-VALUES ('PCくん', 'rainbowegg.gif', 'pc.gif', 'pc1.gif', 'pc2.gif', 'pc3.gif', false);
+VALUES ('ピーシー', 'rainbowegg', 'pc', 'pc1', 'pc2', 'pc3', false);
+INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
+VALUES ('まグロ', 'rainbowegg', 'maguro', 'maguro1', 'maguro2', 'maguro3', false);
+INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
+VALUES ('たまごやき', 'rainbowegg', 'tamagoyaki', 'tamagoyaki1', 'tamagoyaki2', 'tamagoyaki3', false);
 
+insert into character (char_id, ex_point) values (1, 0);
 
-//chara
-UPDATE CHARACTER SET file_pass = 'poyopoyokinoko.gif' WHERE char_id = 1;
-
-//mission
 INSERT INTO MISSION (sentence) VALUES ('笑顔で挨拶する');
 INSERT INTO MISSION (sentence) VALUES ('進捗を上司に報告する');
 INSERT INTO MISSION (sentence) VALUES ('1時間に1回休憩を取る');
@@ -62,29 +74,6 @@ INSERT INTO MISSION (sentence) VALUES ('社内の人とコミュニケーショ�
 INSERT INTO MISSION (sentence) VALUES ('新しい技術を習得する');
 INSERT INTO MISSION (sentence) VALUES ('メールの返信をする');
 
-//missionclear
-INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶', false);
-INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶１', false);
-INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('挨拶２', false);
-
-//misionClearテーブル
-CREATE TABLE MISSIONCLEAR (
-mission_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-sentence VARCHAR(30),
-cleared BOOLEAN
-);
-
-<DROP文>
-DROP TABLE mission;
-
-//charadata
-CREATE TABLE charadata (
-char_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-name VARCHAR(20),
-eggimg VARCHAR(50),
-charaimg1 VARCHAR(50),
-charaimg2 VARCHAR(50),
-charaimg3 VARCHAR(50),
-charaimg4 VARCHAR(50),
-have_flag BOOLEAN NOT NULL
-);
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮1', false);
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮2', false);
+INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮3', false);

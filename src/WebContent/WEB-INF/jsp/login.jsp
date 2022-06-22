@@ -19,7 +19,7 @@
 	<div class="namepass">
 
 	<div class="nes-container is-rounded is-dark">
- <input type="text" name="user_id" placeholder="Username"/><br>
+ <input type="text" name="user_name" placeholder="Username"/><br>
 </div>
 
 	<div class="nes-container is-rounded is-dark">

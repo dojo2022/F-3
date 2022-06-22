@@ -61,19 +61,13 @@ System.out.println(day1+","+day2);
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				boolean piyo=true;
-				String str = request.getParameter("user_id");
+				String name = request.getParameter("user_name");
 				String pw = request.getParameter("user_pass");//jsp側の人々と連携
-				int id;
-				try{ //idをint型にする
-					id=Integer.parseInt(str);
-				}catch(Exception e){
-					System.out.println(str); //デバッグ用
-					id=0;
-				}
+				int id = 1;//userは増やさないから1固定
 
 				// ログイン処理を行う
 				UserDao uDao = new UserDao();
-				User user=new User(id,pw,0,0);
+				User user=new User(id,name,pw,0,0);
 				if (uDao.isLoginOK(user)) {	// ログイン成功
 					// セッションスコープにIDを格納する
 					HttpSession session = request.getSession();

@@ -22,9 +22,9 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from user where user_id = ? and user_pass = ?";
+			String sql = "select count(*) from user where user_name = ? and user_pass = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setInt(1, user.getUser_id());
+			pStmt.setString(1, user.getUser_name());
 			pStmt.setString(2,user.getUser_pass());
 
 			// SELECT文を実行し、結果表を取得する
@@ -77,7 +77,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select point from user";
+			String sql = "select point from user where user_id = 1";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SELECT文を実行し、結果表を取得する
@@ -131,7 +131,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6_data/F3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select char_id from user";
+			String sql = "select char_id from user where user_id = 1";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SELECT文を実行し、結果表を取得する

@@ -30,6 +30,23 @@
 <div class="btn">
   <button data-hover="click me!"><div>Go to work!</div></button>
   </div>
+  <input type="hidden" id="cant_login" value="${flag}" />
 </form>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script>
+let flag = document.getElementById("cant_login");
+if(flag.value == "false")
+{
+	var options = {
+	        text: 'UsernameかPasswordが違います',
+	        buttons: {
+	            ok: 'OK'
+	        }
+	};
+	swal(options).then(function(value){
+	        console.log("UsernameかPasswordが違います")
+	});
+}
+</script>
 </html>

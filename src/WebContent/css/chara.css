@@ -5,47 +5,101 @@
     background-size: cover;
     background-attachment: fixed;
   }
+  h1{
+    text-align: center;
+    margin: 10px;
+  }
+
   #main {
       display: flex;
-      margin-top: 10px;
-      height: 629px;
+      margin-top: 25px;
+      height: 605px;
       width: 100%;
     }
   .left{
-    background-color: aliceblue;
+    background-color: rgb(50, 30, 30);
     background-size: cover;
     text-align: center;
     margin: 10px;
     width:23%;
+    color:rgb(200, 200, 200);
   }
   .right{
-    background-color: azure;
+    background-color: rgb(50, 30, 30);
     background-size: cover;
     text-align: left;
     margin: 10px;
-    width: 70%;
-    height: 150%;
+    width: 74%;
+    overflow: auto;
+
   }
-  h1{
-    text-align: left;
+  .backbtnbox{
+  	width: 100px;
+  	height: 100px;
+	margin: 8px;
+	margin-bottom: 30px;
   }
-  .action{
-    width: 100%;
-    height: 100%;
+  .backbtnbox form{
+    height: 100px;
+    margin: 0;
+  	padding: 0;
+  }
+  #backbtn{
+    height: 100px;
+    margin: 0;
+  	padding: 0;
+  }
+  #backbtn img{
+  	width: 100%;
+  	height: 100%;
+  }
+
+  .maincharabox{
+	background-image: url(/nakao/img/ki.jpg);
+	width: 285px;
+  	margin: 11px;
+	color:rgb(0,0,0);
+  }
+   .maincharainf{
+  	text-align: center;
+    padding: 8px;
+  }
+  .maincharaimg{
+	height: 250px;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+  }
+
+  .listcharabox{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+  	/*justify-content: space-between;*/
+
   }
-  .formdayo{
-  	width: 300px;
-  	height: 350px;
+  .formcharabox{
+  	width: 285px;
+  	margin: 21px;
+  	background-image: url(/nakao/img/ki.jpg);
   }
-   .sutechange{
-  	width: 250px;
-  	height: 300px;
-  	margin: 10px;
+
+  .listcharainf{
+    text-align: center;
+    margin: 8px;
   }
+
+  .listcharaimg{
+  	height: 250px;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+  }
+
   .changeBtn{
-  	width: 50px;
-  	height: 20px;
-  	margin: 10px;
+  	text-align: center;
+  	margin: auto;
+  	margin-bottom: 8px;
   }

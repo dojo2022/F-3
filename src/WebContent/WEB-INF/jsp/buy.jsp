@@ -20,7 +20,7 @@
     </div>
     <div class = "koma">
 	<!-- アニメーション -->
-	<video  id = "video" src="/nakao/img/notloop.mp4" width="900" height="" onended="finish()"></video>
+	<video  id = "video" src="/nakao/img/notloop.mp4" width="800" height="" onended="finish()"></video>
     </div>
     <div class="ken">
     <img src="/nakao/img/dansu.gif" width="70%" height="" >

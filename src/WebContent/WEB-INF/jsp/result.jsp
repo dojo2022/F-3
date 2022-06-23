@@ -21,15 +21,19 @@
 	</div>
 
 
-
+		<img id = "iwa" src="/nakao/img/zn6.png" width="650" height="200">
 	  <div class="blackboard-box">
 	  	<br>
+	  	<div class="text">
 	    <p>退勤しました。</p>
+	    <br>
 	    <p>本日も一日お疲れ様でした。</p>
+	    </div>
 		<br>
-	    <div class="chalk1"></div>
-	    <div class="chalk2"></div>
+	    <!--<div class="chalk1"></div>-->
+	    <!--<div class="chalk2"></div>-->
 	  </div>
+
 
 	<!-- 画面を閉じる -->
 	<form method="POST" action="/nakao/ResultServlet">

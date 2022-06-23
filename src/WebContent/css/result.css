@@ -26,19 +26,19 @@ body{
   /* 背景画像が読み込まれる前に表示される背景のカラー */
 }
 .blackboard-box{
-  background: #104300;
+  /*background: #104300;*/
   margin: 1em 0;
-  margin-top: 240px;
+  margin-top: 210px;
   margin-left: 300px;
 margin-right: 300px;
   padding: 1em 1em 0 1em;
-  border: 8px solid #a60;
-  box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
+  /*border: 8px solid #a60;*/
+  /*box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;*/
 }
 .blackboard-box p{
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: black;
   text-shadow: 0px 0px 2px #fff;
 }
 .chalk1{
@@ -60,5 +60,19 @@ margin-right: 300px;
   border-radius: 3px 2px 0 2px;
 }
 .ok{
-	margin-top:40px;
+	margin-top: -30px;
 }
+#iwa{
+	position: relative;
+    top: 220px;
+    left: -5px;
+}
+.text{
+		position: absolute;
+		top: 300px;
+    left: 585px;
+    font-family: MS UI Gothic;
+}
+
+
+

@@ -1,1 +1,51 @@
 @charset "UTF-8";
+ body{
+    background-image: url(/nakao/img/doukutu4.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  #main {
+      display: flex;
+      margin-top: 10px;
+      height: 629px;
+      width: 100%;
+    }
+  .left{
+    background-color: aliceblue;
+    background-size: cover;
+    text-align: center;
+    margin: 10px;
+    width:23%;
+  }
+  .right{
+    background-color: azure;
+    background-size: cover;
+    text-align: left;
+    margin: 10px;
+    width: 70%;
+    height: 150%;
+  }
+  h1{
+    text-align: left;
+  }
+  .action{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .formdayo{
+  	width: 300px;
+  	height: 350px;
+  }
+   .sutechange{
+  	width: 250px;
+  	height: 300px;
+  	margin: 10px;
+  }
+  .changeBtn{
+  	width: 50px;
+  	height: 20px;
+  	margin: 10px;
+  }

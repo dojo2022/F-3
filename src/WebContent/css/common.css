@@ -1,1 +1,6 @@
 @charset "UTF-8";
+
+@font-face {
+	font-family: PixelMplus10-Regular;
+	src: url(/nakao/font/PixelMplus10-Regular.ttf) format("truetype");
+}

@@ -21,28 +21,27 @@
 
 	<div class="mission_c">
 	        <div class="miss1">
-	        	<br>
+
 	        	<h1>  <img src="/nakao/img/0tk32.png"></h1>
 	            <span id="mission1">${mission[0].getMission()}</span>
-	            <br>
+
 	            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
 	            <input type="hidden" value="${mission[0].getCleared()}" id="cleared1">
 	        </div>
-	        <br>
-	        <br>
-	        <br>
+
+
 	        <div class="miss2">
 	            <span id="mission2">${mission[1].getMission()}</span>
-	            <br>
+
 	            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
 	            <input type="hidden" value="${mission[1].getCleared()}" id="cleared2">
 	        </div>
-	        <br>
-	        <br>
-	        <br>
+
+
+
 	        <div class="miss3">
 	            <span id="mission3">${mission[2].getMission()}</span>
-	            <br>
+
 	            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
 	            <input type="hidden" value="${mission[2].getCleared()}" id="cleared3">
 	        </div>
@@ -56,8 +55,9 @@
   <br>
   	<div class = "info">
 		<img src="/nakao/img/Lv.png" width="10%" ><span id = "Level"></span>
-		<img src="/nakao/img/Ex.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span>
-		<img src="/nakao/img/No.png" width="10%" ><span> ${growing.getName()}</span>
+		<span> ${growing.getName()}</span>
+		<span class= "info_item"><img src="/nakao/img/Ex.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span></span>
+
 	</div>
 
   </div>

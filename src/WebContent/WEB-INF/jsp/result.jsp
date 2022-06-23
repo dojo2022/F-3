@@ -13,7 +13,7 @@
 <body id="main">
 
 	<div class="den">
-	    <img src="/nakao/img/main_image/${resultChara.getEggimg()}.gif" width="" height="">
+	    <img src="/nakao/img/main_image/gaikotu.gif" width="" height="">
 	</div>
 
 	<div class="cen">

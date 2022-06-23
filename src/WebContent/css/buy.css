@@ -1,4 +1,7 @@
 @charset "UTF-8";
+*{
+	font-family: PixelMplus10-Regular;
+}
 .b{
 	 text-align: center;
 	 font-size:72px;

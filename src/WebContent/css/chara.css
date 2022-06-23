@@ -1,4 +1,8 @@
 @charset "UTF-8";
+
+*{
+	font-family: PixelMplus10-Regular;
+}
  body{
     background-image: url(/nakao/img/doukutu4.jpg);
     background-position: center center;
@@ -8,6 +12,7 @@
   h1{
     text-align: center;
     margin: 10px;
+    font-family: PixelMplus10-Regular;
   }
 
   #main {
@@ -63,7 +68,12 @@
    .maincharainf{
   	text-align: center;
     padding: 8px;
+    font-weight: 24;
   }
+  .maincharainf * {
+    font-weight: 24;
+  }
+
   .maincharaimg{
 	height: 250px;
   	display: flex;
@@ -88,6 +98,10 @@
   .listcharainf{
     text-align: center;
     margin: 8px;
+    font-weight: 24;
+  }
+  .listcharainf * {
+    font-weight: 24;
   }
 
   .listcharaimg{

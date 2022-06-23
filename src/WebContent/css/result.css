@@ -1,4 +1,7 @@
 @charset "UTF-8";
+*{
+	font-family: PixelMplus10-Regular;
+}
 .den{
 	 position:  absolute;
 	 top: 40%;
@@ -69,9 +72,11 @@ margin-right: 300px;
 }
 .text{
 		position: absolute;
-		top: 300px;
-    left: 585px;
+		top: 290px;
+    left: 530px;
     font-family: MS UI Gothic;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 

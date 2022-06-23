@@ -23,7 +23,7 @@
     <div class = "maincharabox">
 	    <div class = "maincharainf">
 			Lv:<span id = "mainLevel"></span>
-			Name:<span>${growing.getName()}</span>
+			<span>${growing.getName()}</span>
 			Ex:<span id = "mainPassageArea">${growing.getEx_point()}</span>
 		</div>
 	    <div class="maincharaimg">
@@ -39,7 +39,7 @@
 
 				<div class = "listcharainf">
 				 	Lv:<span class = "Level"></span>
-				 	Name:<span><c:out value = "${e.name}"/></span>
+				 	<span><c:out value = "${e.name}"/></span>
 				 	Ex:<span class = "PassageArea"><c:out value = "${e.ex_point}"/></span>
 				</div>
 		      	<div class="listcharaimg">

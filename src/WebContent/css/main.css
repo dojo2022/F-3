@@ -1,4 +1,7 @@
 @charset "UTF-8";
+	*{
+		font-family: PixelMplus10-Regular;
+	}
     body{
       border: 10px  #000000;
                                 /* 余白指定 */
@@ -85,7 +88,7 @@
     height: 40px;
     }
 	.chb{
-    margin-top: 414px;
+    margin-top: 425px;
     }
     .right2{
     margin-top: 15px;
@@ -94,7 +97,7 @@
         margin-bottom: 100px;
     }
     .eggB{
-        margin-top: 105px;
+        margin-top: 110px;
     }
 
 	button {
@@ -104,20 +107,34 @@
 	}
 
 	.mission_c{
+		display:flex;
+  		flex-flow: column;
+  		justify-content:space-around;
 		margin-left: 65px;
 		width: 10em;
+		height: 500px;
+
+	}
+	.mission_c span{
+		margin: 8px;
+		margin-bottom: 10;
 	}
 
 	.info{
-		font-size: 40px;
+		font-size: 45px;
 		font-weight: 700;
 		font-family: Impact,Charcoal;
+	}
+
+	.info_item{
+		margin: 5px;
+		width: 100px;
 	}
 
 	#tpoint{
 		font-family: Impact,Charcoal;
 		color: #FFFFFF;
-		margin-top: 4px;
+		margin-top: 22px;
 	}
 
 	.charaimg{

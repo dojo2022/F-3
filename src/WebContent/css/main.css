@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 	*{
 		font-family: PixelMplus10-Regular;
@@ -76,16 +77,19 @@
     background-image:url(/nakao/img/tassei.png);
     width: 100px;
     height: 40px;
+    cursor: pointer;
     }
     #clearbtn2{
     background-image:url(/nakao/img/tassei.png);
     width: 100px;
     height: 40px;
+    cursor: pointer;
     }
     #clearbtn3{
     background-image:url(/nakao/img/tassei.png);
     width: 100px;
     height: 40px;
+    cursor: pointer;
     }
 	.chb{
     margin-top: 425px;
@@ -104,6 +108,7 @@
 	  border: none;
 	  outline: none;
 	  background: transparent;
+	  cursor: pointer;
 	}
 
 	.mission_c{

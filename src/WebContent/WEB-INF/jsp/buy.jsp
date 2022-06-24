@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 </head>
 <body>
 <form method="GET" action="/nakao/MainServlet" name="form">
-	<button type="button"id="backbtn"><img src="/nakao/img/sa.png"id="backbtnimg" ></button>
+	<button type="submit"id="backbtn"><img src="/nakao/img/sa.png"id="backbtnimg" ></button>
 </form>
 <div class = "yoko">
 	<div class="cen">
@@ -43,7 +44,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>
-
+/*
 let cb = document.getElementById("cant_buy");
 console.log("cb = " + cb.value);
 
@@ -61,7 +62,7 @@ window.onload = function() {
 	    });
 	}
 };
-
+*/
 </script>
 
 

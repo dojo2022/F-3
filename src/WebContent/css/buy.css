@@ -1,7 +1,11 @@
+
 @charset "UTF-8";
 *{
 	font-family: PixelMplus10-Regular;
 }
+button{
+  	cursor: pointer;
+  }
 .b{
 	 text-align: center;
 	 font-size:72px;
@@ -62,6 +66,9 @@ margin-right: 0px;
 	  margin-top: 180px;
 	  text-align: center;
 	   transform: scale(-1,1);
+}
+#btn1{
+  	cursor: pointer;
 }
 #backbtn{
 	width: 80px;

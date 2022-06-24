@@ -1,6 +1,10 @@
+
 @charset "UTF-8";
 *{
 	font-family: PixelMplus10-Regular;
+}
+button{
+  	cursor: pointer;
 }
 .men{
 	position:  absolute;

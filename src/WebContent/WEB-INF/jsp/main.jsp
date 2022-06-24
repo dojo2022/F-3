@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="model.Chara" %>
@@ -67,7 +68,7 @@
 </div>
 	<div class="chb">
 		<form method = "GET" action = "/nakao/CharaServlet">
-		  <button>
+		  <button id="changebtn">
 		  <div>
 		    <img src="/nakao/img/change.png">
 		    <img src="/nakao/img/main_image/poyopoyokinoko.gif" width="14%" height="">

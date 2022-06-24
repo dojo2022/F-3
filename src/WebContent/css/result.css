@@ -2,6 +2,16 @@
 *{
 	font-family: PixelMplus10-Regular;
 }
+.men{
+	position:  absolute;
+	top: 85px;
+	left: 580px;
+}
+.ben{
+	 position:  absolute;
+	 top: 40%;
+	 left:  95px;
+}
 .den{
 	 position:  absolute;
 	 top: 40%;

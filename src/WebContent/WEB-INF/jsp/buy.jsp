@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="/nakao/css/buy.css">
 </head>
 <body>
+<form method="GET" action="/nakao/MainServlet" name="form">
+	<button type="button"id="backbtn"><img src="/nakao/img/sa.png"id="backbtnimg" ></button>
+</form>
 <div class = "yoko">
 	<div class="cen">
     <img src="/nakao/img/dansu.gif" width="70%" height="" >
@@ -27,22 +30,16 @@
     </div>
 </div>
 <div class="sa">
-		<div class="b">
+	<div class="b">
 		<img src="/nakao/img/r9.gif" width="10%" height="" >
 		<img src="/nakao/img/r9.gif" width="10%" height="" >
 		<img id = "btn1" src="/nakao/img/eggg.gif" width="100" height="100">
 		<img src="/nakao/img/r9.gif" width="10%" height="" >
 		<img src="/nakao/img/r9.gif" width="10%" height="" >
 	</div>
-	<div class = "backbtn">
-		<form name="form" method="GET" action="/nakao/MainServlet">
-	 	<input type="hidden" value="${cant_buy}" id = "cant_buy">
-		<a href = /nakao/MainServlet><button type="button" id="backbtn1"><img src="/nakao/img/sa.png" width="60px" height="60px"></button></a>
-
-
-		</form>
-	</div>
 </div>
+
+<input type="hidden" value="${cant_buy}" id = "cant_buy">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>

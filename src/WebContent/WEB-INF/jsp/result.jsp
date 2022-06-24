@@ -11,13 +11,18 @@
 </head>
 
 <body id="main">
-
+	<div class="men">
+	    <img src="/nakao/img/main_image/${resultChara.getCharaimg2()}.gif" width="200" height="200">
+	</div>
+	<div class="ben">
+	    <img src="/nakao/img/main_image/gaikotu.gif" width="150" height="150">
+	</div>
 	<div class="den">
-	    <img src="/nakao/img/main_image/gaikotu.gif" width="" height="">
+	    <img src="/nakao/img/main_image/gaikotu.gif" width="150" height="150">
 	</div>
 
 	<div class="cen">
-	    <img src="/nakao/img/main_image/${resultChara.getCharaimg1()}.gif" width="" height="">
+	    <img src="/nakao/img/main_image/${resultChara.getCharaimg1()}.gif" width="200" height="200">
 	</div>
 
 

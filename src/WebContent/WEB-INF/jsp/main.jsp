@@ -24,7 +24,7 @@
 
 	        	<h1>  <img src="/nakao/img/0tk32.png"></h1>
 	            <span id="mission1">${mission[0].getMission()}</span>
-
+				<br>
 	            <input type="button" value="✓" onclick="check1()" id="clearbtn1">
 	            <input type="hidden" value="${mission[0].getCleared()}" id="cleared1">
 	        </div>
@@ -32,7 +32,7 @@
 
 	        <div class="miss2">
 	            <span id="mission2">${mission[1].getMission()}</span>
-
+				<br>
 	            <input type="button" value="✓" onclick="check2()" id="clearbtn2">
 	            <input type="hidden" value="${mission[1].getCleared()}" id="cleared2">
 	        </div>
@@ -41,7 +41,7 @@
 
 	        <div class="miss3">
 	            <span id="mission3">${mission[2].getMission()}</span>
-
+				<br>
 	            <input type="button" value="✓" onclick="check3()" id="clearbtn3">
 	            <input type="hidden" value="${mission[2].getCleared()}" id="cleared3">
 	        </div>

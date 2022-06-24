@@ -59,6 +59,10 @@ INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4,
 VALUES ('まグロ', 'rainbowegg', 'maguro', 'maguro1', 'maguro2', 'maguro3', false);
 INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
 VALUES ('たまごやき', 'rainbowegg', 'tamagoyaki', 'tamagoyaki1', 'tamagoyaki2', 'tamagoyaki3', false);
+INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
+VALUES ('あいす', 'rainbowegg', 'icecream', 'icecream1', 'icecream2', 'icecream3', false);
+INSERT INTO CHARADATA (name, eggimg, charaimg1, charaimg2, charaimg3, charaimg4, have_flag) 
+VALUES ('ねるね', 'rainbowegg', 'neruneru', 'neruneru1', 'neruneru2', 'neruneru3', false);
 
 insert into character (char_id, ex_point) values (1, 0);
 

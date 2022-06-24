@@ -44,7 +44,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>
-/*
+
 let cb = document.getElementById("cant_buy");
 console.log("cb = " + cb.value);
 
@@ -62,7 +62,7 @@ window.onload = function() {
 	    });
 	}
 };
-*/
+
 </script>
 
 

@@ -53,19 +53,22 @@ margin-right: 0px;
 }
 .yoko{
 	display: flex;
+	justify-content: space-between;
 }
 .sa{
 	display: flex;
 
 }
 .cen{
-	  margin-top: 180px;
-	  text-align: center;
+	margin: auto;
+	margin-top: 180px;
+	text-align: center;
 }
 .ken{
-	  margin-top: 180px;
-	  text-align: center;
-	   transform: scale(-1,1);
+	margin: auto;
+	margin-top: 180px;
+	text-align: center;
+	transform: scale(-1,1);
 }
 #btn1{
   	cursor: pointer;

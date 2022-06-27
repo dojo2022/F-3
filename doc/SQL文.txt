@@ -80,3 +80,22 @@ INSERT INTO MISSION (sentence) VALUES ('メールの返信をする');
 INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮1', false);
 INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮2', false);
 INSERT INTO MISSIONCLEAR (sentence, cleared) VALUES ('仮3', false);
+
+delete from character;
+insert into character (char_id, ex_point) values (1, 500);
+insert into character (char_id, ex_point) values (2, 500);
+insert into character (char_id, ex_point) values (3, 500);
+insert into character (char_id, ex_point) values (4, 500);
+insert into character (char_id, ex_point) values (5, 500);
+
+update charadata set have_flag = true where char_id = 1;
+update charadata set have_flag = true where char_id = 2;
+update charadata set have_flag = true where char_id = 3;
+update charadata set have_flag = true where char_id = 4;
+update charadata set have_flag = true where char_id = 5;
+update charadata set have_flag = false where char_id = 6;
+
+update user set char_id = 1;
+update user set point = 100;
+
+update missionclear set cleared = false;

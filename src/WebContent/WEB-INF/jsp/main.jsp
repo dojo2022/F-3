@@ -9,6 +9,7 @@
 <title>main画面</title>
 <link rel="stylesheet" type="text/css" href="/nakao/css/common.css">
 <link rel="stylesheet" type="text/css" href="/nakao/css/main.css">
+
 <script src="/nakao/javascript/common.js"></script>
 <script src="/nakao/javascript/main.js"></script>
 </head>
@@ -53,11 +54,10 @@
 <div class="center">
 <div class="chara" >
   <div class="sute">
-  <br>
   	<div class = "info">
-		<img src="/nakao/img/Lv.png" width="10%" ><span id = "Level"></span>
-		<span> ${growing.getName()}</span>
-		<span class= "info_item"><img src="/nakao/img/Ex.png" width="10%" ><span id = "PassageArea">${growing.getEx_point()}</span></span>
+		<img src="/nakao/img/Lv.png" width="10%" id = "Lvimg"> <span id = "Level"></span>
+		<span id = "Name">  ${growing.getName()}</span>
+		<span class= "info_item"><img src="/nakao/img/Ex.png" width="10%"  id = "Eximg"><span id = "PassageArea">${growing.getEx_point()}</span></span>
 
 	</div>
 

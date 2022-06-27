@@ -20,14 +20,14 @@
 </form>
 <div class = "yoko">
 	<div class="cen">
-    <img src="/nakao/img/dansu.gif" width="70%" height="" >
+    <img src="/nakao/img/main_image/gaikotu.gif" width="150" height="150" >
     </div>
     <div class = "koma">
 	<!-- アニメーション -->
 	<video  id = "video" src="/nakao/img/notloop.mp4" width="800" height="" onended="finish()"></video>
     </div>
     <div class="ken">
-    <img src="/nakao/img/dansu.gif" width="70%" height="" >
+    <img src="/nakao/img/main_image/gaikotu.gif" width="150" height="150" >
     </div>
 </div>
 <div class="sa">

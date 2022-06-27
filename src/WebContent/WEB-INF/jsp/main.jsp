@@ -152,17 +152,40 @@ function showPassage(pa) {
     }
 	lv.textContent = levelCount;
 	let img = document.getElementById("mainimg");
-	if(levelCount > 1) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
+	if(levelCount <= 1) {
+		if(img.src != ('http://localhost:8080/nakao/img/main_image/' + '${growing.getEggimg()}' + '.gif')){
+			console.log("img.src = " + img.src);
+			console.log("卵画像");
+			img.src = '/nakao/img/main_image/' + '${growing.getEggimg()}' + '.gif';
+		}
 	}
-	if(levelCount > 2) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
+	else if(levelCount <= 2) {
+		if(img.src != ('http://localhost:8080/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif')){
+			console.log("img.src = " + img.src);
+			console.log("キャラ1画像");
+			img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
+		}
 	}
-	if(levelCount > 3) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
+	else if(levelCount <= 3) {
+		if(img.src != ('http://localhost:8080/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif')){
+			console.log("img.src = " + img.src);
+			console.log("キャラ2画像");
+			img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
+		}
 	}
-	if(levelCount > 4) {
-		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
+	else if(levelCount <= 4) {
+		if(img.src != ('http://localhost:8080/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif')){
+			console.log("img.src = " + img.src);
+			console.log("キャラ3画像");
+			img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
+		}
+	}
+	else {
+		if(img.src != ('http://localhost:8080/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif')){
+			console.log("img.src = " + img.src);
+			console.log("キャラ4画像");
+			img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
+		}
 	}
     console.log(levelCount);
 }
@@ -185,16 +208,19 @@ window.onload = function() {
     }
 	lv.textContent = levelCount;
 	let img = document.getElementById("mainimg");
-	if(levelCount > 1) {
+	if(levelCount <= 1) {
+		img.src = '/nakao/img/main_image/' + '${growing.getEggimg()}' + '.gif';
+	}
+	else if(levelCount <= 2) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg1()}' + '.gif';
 	}
-	if(levelCount > 2) {
+	else if(levelCount <= 3) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg2()}' + '.gif';
 	}
-	if(levelCount > 3) {
+	else if(levelCount <= 4) {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg3()}' + '.gif';
 	}
-	if(levelCount > 4) {
+	else {
 		img.src = '/nakao/img/main_image/' + '${growing.getCharaimg4()}' + '.gif';
 	}
 

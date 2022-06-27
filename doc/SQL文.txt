@@ -99,3 +99,9 @@ update user set char_id = 1;
 update user set point = 100;
 
 update missionclear set cleared = false;
+
+update charadata set name = 'ぴこぴこぱそこ' where char_id = 2;
+update charadata set name = 'ぴちぴちまグロ' where char_id = 3;
+update charadata set name = 'ふわふわたまご' where char_id = 4;
+update charadata set name = 'ひえひえあいす' where char_id = 5;
+update charadata set name = 'くるくるねるね' where char_id = 6;
